@@ -16,6 +16,8 @@
 </head>
 <body>
 
+  <div class = "wrapper">
+
   <div class = "header">
     <center><div class = "menu-links">
     <a href="">how to play</a>
@@ -31,11 +33,7 @@
       <div id = "asker" class = "lead-text">David asked...</div>
       <div class="card-content">What is my deepest desire? (question)</div>
     </div>
-    <div id = "clue" class = "card">
-      <div id = "clue-lead" class = "lead-text">The clue for this game is...</div>
-      <div class="card-content">Back to The Future (clue)</div>
-    </div>
-    <div id = "guess" class = "card">
+<!--     <div id = "guess" class = "card">
       <div id = "guesser" class = "lead-text">Larry guessed...</div>
       <div class="card-content">Self-lacing sneakers? (guess)</div>
       <div class="vote-deck">
@@ -48,23 +46,33 @@
       <div class="vote-deck">
         <img src="/img/thumb.png"> <img src="/img/thumbdown.png">
       </div>
-    </div>
+    </div> -->
 
     <div id="feed">
-      
+      <div id = "clue" class = "card">
+        <div id = "clue-lead" class = "lead-text">The clue for this game is...</div>
+        <div class="card-content">Back to The Future (clue)</div>
+      </div>
+
     </div>
 
-    <div id = "guess-form">
-        <ul id="messages"></ul>
-        <button id="showGuess" onclick="showGuessInput()">drop a clue!</button>
-        <button id="showSolve" onclick="showSolveInput()">solve the puzzle!</button>
-        <input id="input-guess" autocomplete="off"/>
-        <input id="input-solve" autocomplete="off"/>
-        <button id="guess-button" >guess</button>
-        <button id="solve-button" >solve!</button>
-    </div>
+
 
   </div>
+
+</div>
+
+<div class="footer">
+  <div id = "guess-form">
+      <ul id="messages"></ul>
+      <button id="showGuess" onclick="showGuessInput()">drop a clue!</button>
+      <button id="showSolve" onclick="showSolveInput()">solve the puzzle!</button>
+      <input id="input-guess" autocomplete="off"/>
+      <input id="input-solve" autocomplete="off"/>
+      <button id="guess-button" >guess</button>
+      <button id="solve-button" >solve!</button>
+  </div>
+</div>
   
   <script type="text/javascript" src="/js/client.js"></script>
 

@@ -22,6 +22,7 @@ a{
 }
 .footer{
 	margin: 0;
+	text-align: center;
 }
 
 
@@ -65,12 +66,17 @@ a{
 	font-size: 1.5rem;
 	text-align: left;	
 }
+#feed{
+	overflow: scroll;
+	max-height: 50%;
+}
 	/*QUESTION*/
 	#question{
 		min-height: 10%;
 		background-color: #E7BB41;
 		border: 0.2rem solid #393E41;
 		color: white;
+		margin-bottom: 0;
 	}
 		#asker{
 
@@ -118,4 +124,7 @@ input {
 }
 #solve-button{
 	display: none;
+}
+#guess-form{
+
 }
