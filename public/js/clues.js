@@ -1,7 +1,10 @@
-function makeGif(word){ //returns a url for the gif
+function makeGif(word, callback){ //returns a url for the gif
+
+  var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=dc6zaTOxFJmzC&limit=5");
+  xhr.done(function(data) { console.log("success got data", data); });
 
   q = word; // search query
-
+  
   request = new XMLHttpRequest;
   request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q, true);
   
@@ -9,25 +12,23 @@ function makeGif(word){ //returns a url for the gif
     if (request.status >= 200 && request.status < 400){
       data = JSON.parse(request.responseText).data.image_url;
       console.log(data);
+      callback(data);
     } else {
       console.log('reached giphy, but API returned an error');
      }
   };
- 
+
   request.onerror = function() {
     console.log('connection error');
   };
- 
+
   request.send();
 
-  return data;
 }
 
 function isGif(str){ //determines if a user input string is for a gif
-	var strArray;
-	strArray = str.split();
 
-	if(strArray.slice(0,6) == "gif..."){
+	if(str.indexOf("gif...") == 0){
 		return true;
 	}
 

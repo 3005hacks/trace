@@ -31,17 +31,41 @@ function showSolveInput(){
 }
 
 socket.on('goonGuess', function(msg){
-	$('#feed').append($(
-		'\
-		<div class = "card">\
-			<div class = "lead-text">The clue for this game is...</div>\
-			<div class="card-content">' + msg + '</div>\
-			<div class="vote-deck">\
-				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-guess" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-guess" src="/img/thumbdown.png">\
+
+	if (isGif(msg)) {
+		makeGif(getGifWord(msg), function(data) {
+			var cardContent = '<img class="gif" src="' + data + '">';
+
+			$('#feed').append($(
+				'\
+				<div class = "card">\
+					<div class = "lead-text">The clue for this game is...</div>\
+					<div class="card-content">' + cardContent + '</div>\
+					<div class="vote-deck">\
+						<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-guess" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-guess" src="/img/thumbdown.png">\
+					</div>\
+				</div>\
+				'
+			));
+
+		});
+	}
+	else {
+		var cardContent = msg;
+
+		$('#feed').append($(
+			'\
+			<div class = "card">\
+				<div class = "lead-text">The clue for this game is...</div>\
+				<div class="card-content">' + cardContent + '</div>\
+				<div class="vote-deck">\
+					<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-guess" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-guess" src="/img/thumbdown.png">\
+				</div>\
 			</div>\
-		</div>\
-		'
-	));
+			'
+		));
+	}
+
 
 	$('#thumbs-up-'+thumbsUpCount).click(function(){
 		socket.emit('topDawgThumbsUp', this.id);
@@ -57,10 +81,11 @@ socket.on('goonGuess', function(msg){
 });
 
 socket.on('goonSolve', function(msg){
+
 	$('#feed').append($(
 		'\
 		<div class = "card">\
-+			<div class = "lead-text">Larry guessed...</div>\
+			<div class = "lead-text">Larry guessed...</div>\
  			<div class="card-content">' + msg + '</div>\
  			<div class="vote-deck">\
 				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-solve" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-solve" src="/img/thumbdown.png">\
