@@ -13,7 +13,7 @@ $('#solve-button').click(function(){
 });
 
 socket.on('goonGuess', function(msg){
-	$('.content').append($(
+	$('#feed').append($(
 		'\
 		<div class = "card">\
 			<div class = "lead-text">The clue for this game is...</div>\
@@ -27,7 +27,7 @@ socket.on('goonGuess', function(msg){
 });
 
 socket.on('goonSolve', function(msg){
-	$('.content').append($(
+	$('#feed').append($(
 		'\
 		<div id = "guess" class = "card">\
 			<div id = "guesser" class = "lead-text">Larry guessed...</div>\
