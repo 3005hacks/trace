@@ -17,7 +17,7 @@
 // 	showSignin();
 // });
 
-var currentUser = Parse.User.curret();
+var currentUser = Parse.User.current();
 
 if (!currentUser) {
 
