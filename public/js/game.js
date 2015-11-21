@@ -2,7 +2,7 @@ var currentUser = Parse.User.current();
 
 if (!currentUser) {
 
-    window.open('index', "_self");
+    window.open('/', "_self");
 }
 
 function createGame() {
@@ -32,8 +32,8 @@ function createGame() {
       }
     });
 
-    currentUser.add("currentTopDawg", game.id);
-    currentUser.save();
+    // currentUser.add("currentTopDawg", game.id);
+    // currentUser.save();
 }
 
 function joinGame() {
@@ -43,14 +43,15 @@ function joinGame() {
     var Game = Parse.Object.extend("Games");
     var query = new Query(Game);
     query.equalTo("password", pass_given);
+
     query.first({
       success: function(result) {
         alert("Successfully retrieved an object");
 
         // Do something with the returned Parse.Object values
         alert(result.id + ' - ' + result.get('question'));
-        currentUser.add("currentPlayer", result.id);
-        currentUser.save();
+        // currentUser.add("currentPlayer", result.id);
+        // currentUser.save();
         window.open('landing', "_self");
       },
       error: function(error) {
