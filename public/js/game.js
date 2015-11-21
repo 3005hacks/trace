@@ -38,6 +38,7 @@ function joinGame() {
     var gamename_usr = encodeHTML(document.getElementById("new-gamename").value);
     var question_usr = encodeHTML(document.getElementById('new-question').value);
     var hint_usr = encodeHTML(document.getElementById("new-hint").value);
+    var pass_usr = encodeHTML(document.getElementById("new-pass").value);
 
     var Game = Parse.Object.extend("Games");
     var game = new Game();
@@ -46,7 +47,8 @@ function joinGame() {
       gamename: gamename_usr,
       question: question_usr,
       hint: hint_usr,
-      username: currentUser.getUsername()
+      username: currentUser.getUsername(),
+      password: pass_usr
     }, {
       success: function(game) {
         // The object was saved successfully.
