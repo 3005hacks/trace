@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Trace</title>
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="../public/css/landing.css">
 
   <!-- JS -->
   <script src="/socket.io/socket.io.js"></script>
@@ -12,16 +12,6 @@
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500|Nunito|Lato:400,700' rel='stylesheet' type='text/css'>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font: 13px Helvetica, Arial; }
-    form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-    form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-    form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-    #messages { list-style-type: none; margin: 0; padding: 0; }
-    #messages li { padding: 5px 10px; }
-    #messages li:nth-child(odd) { background: #eee; }
-  </style>
 </head>
 <body>
 
@@ -33,13 +23,8 @@
     </div></center>
   </div>
 
-  <ul id="messages"></ul>
-  <input id="m" autocomplete="off" />
-  <button id="clue-button">Clue</button>
-  <button id="guess-button">Guess</button>
-
   <div class = "content">
-    <div class = "logo">trace</div>
+    <a class = "logo" href = "index.html">trace</a>
 
     <div id = "question" class = "card">
       <div id = "asker" class = "lead-text">David asked...</div>
@@ -53,14 +38,27 @@
       <div id = "guesser" class = "lead-text">Larry guessed...</div>
       <div class="card-content">Self-lacing sneakers? (guess)</div>
       <div class="vote-deck">
+        <img src="../img/thumb.png"> <img src="../img/thumbdown.png">
       </div>
     </div>
     <div id = "solution" class = "card">
       <div id = "solver" class = "lead-text">Josh has attempted an answer!</div>
       <div class="card-content">True love (solution)</div>
       <div class="vote-deck">
+        <img src="../img/thumb.png"> <img src="../img/thumbdown.png">
       </div>
     </div>
+
+    <div id = "guess-form">
+        <ul id="messages"></ul>
+        <form action="">
+        <button id="guess-button">guess</button>
+        <button id="solve-button">solve!</button>
+        <input id="guess" autocomplete="off" />
+        <input id="solve" autocomplete="off" />
+        </form>
+    </div>
+
   </div>
   
   <script type="text/javascript" src="/js/client.js"></script>
