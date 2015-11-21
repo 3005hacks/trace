@@ -1,7 +1,7 @@
 /*HTML ELEMENTS*/
 body, html{
 	height: 100%;
-	background-color: #bc33ff;
+	background-color: #44BBA4;
 	font-family: 'Lato', 'sans-serif';
 	color: white;
 	font-size: 10px;
@@ -59,6 +59,7 @@ a{
 	margin-bottom: 4%;
 	font-family: 'Fredoka One';
 	font-size: 20rem;
+	color: white;
 }
 .logo img{
 	height: 20rem;
