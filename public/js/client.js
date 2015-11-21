@@ -12,8 +12,14 @@ $('#solve-button').click(function(){
 	return false;
 });
 
-$('.thumbs-up').click(function(){
-	var currentUser = parse.User.current();
+$(document).on('click', '.thumbs-up', function(){
+	socket.emit('topDawgThumbsUp', self.id);
+	return false;
+});
+
+$(document).on('click', '.thumbs-down', function(){
+	socket.emit('topDawgThumbsDown', self.id);
+	return false;
 });
 
 function showGuessInput(){
@@ -22,6 +28,7 @@ function showGuessInput(){
 	$('#input-guess').show();
 	$('#guess-button').show();
 }
+
 function showSolveInput(){
 	$('#input-solve').show();
 	$('#solve-button').show();
@@ -36,11 +43,13 @@ socket.on('goonGuess', function(msg){
 			<div class = "lead-text">The clue for this game is...</div>\
 			<div class="card-content">' + msg + '</div>\
 			<div class="vote-deck">\
-				<img class="thumbs-up" src="/img/thumb.png"> <img class="thumbs-down" src="/img/thumbdown.png">\
+				<img ' + ' class="thumbs-up" src="/img/thumb.png"> <img class="thumbs-down" src="/img/thumbdown.png">\
 			</div>\
 		</div>\
 		'
 	));
+	thumbsUpCount += 1;
+	thumbsDownCount += 1;
 });
 
 socket.on('goonSolve', function(msg){
@@ -55,4 +64,33 @@ socket.on('goonSolve', function(msg){
 		</div>\
 		'
 	));
+	thumbsUpCount += 1;
+	thumbsDownCount += 1;
+});
+
+socket.on('topDawgThumbsUp', function(thumbsUpId){
+	$(thumbsUpId).css('background-color', 'green');
+});
+
+socket.on('topDawgThumbsDown', function(thumbsDownObj){
+	// thumbsDownObj.css('background-color', 'red');
+});
+
+function toggleID(element){
+	$('#' + 'element').toggle();
+}
+
+function showSignin(){
+	$('#signup-form').toggle();
+	$('#signin-form').toggle();
+	if($('#login-link').html() == "sign up"){
+		$('#login-link').html("sign in");
+	}
+	else if($('#login-link').html() == "sign in"){
+		$('#login-link').html("sign up");
+	}	
+}
+
+$('#sign-in').click( function(){
+	showSignin();
 });

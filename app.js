@@ -24,6 +24,14 @@ io.on('connection', function(socket){
 		io.emit('goonSolve', msg);
 	});
 
+	socket.on('topDawgThumbsUp', function(thumbsUpObj){
+		io.emit('topDawgThumbsUp', thumbsUpObj);
+	});
+
+	socket.on('topDawgThumbsDown', function(thumbsDownObj){
+		io.emit('topDawgThumbsDown', thumbsDownObj);
+	});
+
 });
 
 http.listen(3000, function(){
