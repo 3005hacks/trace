@@ -1,10 +1,41 @@
 var socket = io();
-$('form').submit(function(){
-	socket.emit('chat message', $('#m').val());
-	$('#m').val('');
+
+$('#guess-button').click(function(){
+	socket.emit('goonGuess', $('#input-guess').val());
+	$('#input-guess').val('');
 	return false;
 });
 
-socket.on('chat message', function(msg){
-	$('#messages').append($('<li>').text(msg));
+$('#solve-button').click(function(){
+	socket.emit('goonSolve', $('#input-solve').val());
+	$('#input-solve').val('');
+	return false;
+});
+
+socket.on('goonGuess', function(msg){
+	$('.content').append($(
+		'\
+		<div class = "card">\
+			<div class = "lead-text">The clue for this game is...</div>\
+			<div class="card-content">' + msg + '</div>\
+			<div class="vote-deck">\
+				<img src="/img/thumb.png"> <img src="/img/thumbdown.png">\
+			</div>\
+		</div>\
+		'
+	));
+});
+
+socket.on('goonSolve', function(msg){
+	$('.content').append($(
+		'\
+		<div id = "guess" class = "card">\
+			<div id = "guesser" class = "lead-text">Larry guessed...</div>\
+			<div class="card-content">' + msg + '</div>\
+			<div class="vote-deck">\
+				<img src="/img/thumb.png"> <img src="/img/thumbdown.png">\
+			</div>\
+		</div>\
+		'
+	));
 });
