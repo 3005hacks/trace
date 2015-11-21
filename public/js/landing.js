@@ -1,6 +1,7 @@
 // function toggleID(element){
 // 	$('#' + 'element').toggle();
 // }
+var topDawg;
 
 function showSignin(){
 	$('#signup-form').toggle();
@@ -27,16 +28,17 @@ function isTopDawg() {
     query.first({
           success: function(result) {
             console.log("Successfully retrieved an object");
+            console.log(result === undefined);
 
             // Do something with the returned Parse.Object values
             if (result === undefined) {
 
-              return false;
+                topDawg === false;
             }
             
             else {
 
-              return true;
+              topDawg === true;
             }
           },
           error: function(error) {
@@ -45,5 +47,4 @@ function isTopDawg() {
         });
 }
 
-var topDawg = isTopDawg();
 

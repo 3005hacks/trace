@@ -34,7 +34,7 @@ socket.on('goonGuess', function(msg){
 
 	if (isGif(msg)) {
 		makeGif(getGifWord(msg), function(data) {
-			var cardContent = '<img class="gif" src="' + data + '">';
+			var cardContent = '<img style= "height: 18rem" class="gif" src="' + data + '">';
 
 			$('#feed').append($(
 				'\
