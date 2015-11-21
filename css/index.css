@@ -59,6 +59,13 @@ a{
 	height: 15%;
 	width: 40%;
 }
+/*SOLUTION*/
+#solution{
+	border: 0.2rem solid;
+	position: relative;
+	height: 15%;
+	width: 40%;
+}
 
 /*SECTION*/
 .section-content{
