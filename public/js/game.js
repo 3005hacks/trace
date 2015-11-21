@@ -1,10 +1,5 @@
 var currentUser = Parse.User.current();
 
-if (!currentUser) {
-
-    window.open('/', "_self");
-}
-
 function createGame() {
 
     var gamename_usr = encodeHTML(document.getElementById("new-gamename").value);

@@ -17,10 +17,3 @@ $('#sign-in').click( function(){
 	showSignin();
 });
 
-var currentUser = Parse.User.current();
-
-if (!currentUser) {
-
-	window.open('/', "_self");
-}
-
