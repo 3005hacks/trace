@@ -19,6 +19,8 @@ function createGame() {
     }, {
       success: function(game) {
         // The object was saved successfully.
+        currentUser.add("currentTopDawg", game.id);
+        currentUser.save();
         window.open('landing', "_self");
       },
       error: function(gameScore, error) {
@@ -26,9 +28,6 @@ function createGame() {
         // error is a Parse.Error with an error code and message.
       }
     });
-
-    currentUser.add("currentTopDawg", game.id);
-    currentUser.save();
 }
 
 function joinGame() {
