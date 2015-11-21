@@ -104,4 +104,18 @@ form button { width: 9%; background: #E7BB41; border: none; padding: 10px 10px 1
 input {
 	display: block;
 	text-align: center;
+	width: 40%;
+	margin: 0 30% 0 30%;
+}
+#submit-clue{
+	display:none;
+}
+#submit-solve{
+	display:none;
+}
+#guess-button{
+	display: none;
+}
+#solve-button{
+	display: none;
 }
