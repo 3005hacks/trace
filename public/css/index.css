@@ -35,6 +35,9 @@ a{
 .content{
 	text-align: center;
 }
+#truth{
+	color:red;
+}
 
 /*SIGNUP FORM*/
 .signup-form, .signin-form{
