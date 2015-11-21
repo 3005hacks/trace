@@ -41,8 +41,8 @@
       <div class = "tagline-2">choose an option to start a game</div>
 
       <div id = "start-buttons">
-        <button>Join Game</button>
-        <button>Create Game</button>
+        <button onclick="showJoinGame()">Join Game</button>
+        <button onclick="showNewGame()">Create Game</button>
       </div>
           <div id="game-wrap">
             <div id="game-form">
@@ -67,7 +67,7 @@
 
             <div id="join-game-form">
               <form class="game-form">
-                <label for="gamepass">Title of Game</label>
+                <label for="gamepass">Game Code</label>
                 <input type="text" name="gamepass" id="game-pass" class="input">
               </form>
               <span>

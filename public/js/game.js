@@ -59,9 +59,16 @@ function joinGame() {
     });
 }
 
-
-
-
 function encodeHTML(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+}
+
+function showNewGame(){
+	$('#game-form').show();
+	$('#join-game-form').hide();
+}
+
+function showJoinGame(){
+	$('#game-form').hide();
+	$('#join-game-form').show();
 }
