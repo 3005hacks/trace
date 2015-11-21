@@ -1,4 +1,4 @@
-function makeGif(word){
+function makeGif(word){ //returns a url for the gif
 
   q = word; // search query
 
@@ -23,7 +23,7 @@ function makeGif(word){
   return data;
 }
 
-function isGif(str){
+function isGif(str){ //determines if a user input string is for a gif
 	var strArray;
 	strArray = str.split();
 
@@ -34,4 +34,13 @@ function isGif(str){
 	else{
 		return false;
 	}
+}
+
+function getGifWord(str){//turns a user input string into a word suitable for gif search
+	var strArray;
+	strArray = str.split();
+
+	strArray.splice(0,6);
+
+	return strArray.join();
 }
