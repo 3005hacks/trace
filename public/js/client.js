@@ -12,16 +12,6 @@ $('#solve-button').click(function(){
 	return false;
 });
 
-$(document).on('click', '.thumbs-up', function(){
-	socket.emit('topDawgThumbsUp', self.id);
-	return false;
-});
-
-$(document).on('click', '.thumbs-down', function(){
-	socket.emit('topDawgThumbsDown', self.id);
-	return false;
-});
-
 function showGuessInput(){
 	$('#input-solve').hide();
 	$('#solve-button').hide();
@@ -47,13 +37,23 @@ socket.on('goonGuess', function(msg){
 			<div class = "lead-text">The clue for this game is...</div>\
 			<div class="card-content">' + msg + '</div>\
 			<div class="vote-deck">\
-				<img ' + ' class="thumbs-up" src="/img/thumb.png"> <img class="thumbs-down" src="/img/thumbdown.png">\
+				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down" src="/img/thumbdown.png">\
 			</div>\
 		</div>\
 		'
 	));
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
+
+	$('.thumbs-up').click(function(){
+		socket.emit('topDawgThumbsUp', this.id);
+		return false;
+	});
+
+	$('.thumbs-down').click(function(){
+		socket.emit('topDawgThumbsDown', this.id);
+		return false;
+	});
 });
 
 socket.on('goonSolve', function(msg){
@@ -63,21 +63,31 @@ socket.on('goonSolve', function(msg){
 			<div id = "guesser" class = "lead-text">Larry guessed...</div>\
 			<div class="card-content">' + msg + '</div>\
 			<div class="vote-deck">\
-				<img class="thumbs-up" src="/img/thumb.png"> <img class="thumbs-down" src="/img/thumbdown.png">\
+				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down" src="/img/thumbdown.png">\
 			</div>\
 		</div>\
 		'
 	));
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
+
+	$('.thumbs-up').click(function(){
+		socket.emit('topDawgThumbsUp', this.id);
+		return false;
+	});
+
+	$('.thumbs-down').click(function(){
+		socket.emit('topDawgThumbsDown', this.id);
+		return false;
+	});
 });
 
 socket.on('topDawgThumbsUp', function(thumbsUpId){
-	$(thumbsUpId).css('background-color', 'green');
+	$('#'+thumbsUpId).replaceWith();
 });
 
-socket.on('topDawgThumbsDown', function(thumbsDownObj){
-	// thumbsDownObj.css('background-color', 'red');
+socket.on('topDawgThumbsDown', function(thumbsDownId){
+	$('#'+thumbsDownId).replaceWith();
 });
 
 function toggleID(element){
