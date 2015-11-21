@@ -83,11 +83,13 @@ socket.on('goonSolve', function(msg){
 });
 
 socket.on('topDawgThumbsUp', function(thumbsUpId){
-	$('#'+thumbsUpId).replaceWith();
+	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down').off();
+	$('#'+thumbsUpId).replaceWith($('<img class="thumbs-up-gold" src="/img/correct.png">'));
 });
 
 socket.on('topDawgThumbsDown', function(thumbsDownId){
-	$('#'+thumbsDownId).replaceWith();
+	$('#'+thumbsDownId).closest('.vote-deck').children('.thumbs-up').off();
+	$('#'+thumbsDownId).replaceWith($('<img class="thumbs-down-gold" src="/img/wrong.png">'));
 });
 
 function toggleID(element){
