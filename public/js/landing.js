@@ -17,4 +17,33 @@ $('#sign-in').click( function(){
 	showSignin();
 });
 
+function isTopDawg() {
+
+    var currentUser = Parse.User.current();
+    var Game = Parse.Object.extend("Games");
+    var query = new Parse.Query(Game);
+    query.equalTo("topDawg", currentUser.getUsername());
+
+    query.first({
+          success: function(result) {
+            console.log("Successfully retrieved an object");
+
+            // Do something with the returned Parse.Object values
+            if (result === undefined) {
+
+              return false;
+            }
+            
+            else {
+
+              return true;
+            }
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+}
+
+var topDawg = isTopDawg();
 

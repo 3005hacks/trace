@@ -14,11 +14,13 @@ function createGame() {
       gamename: gamename_usr,
       question: question_usr,
       hint: hint_usr,
-      username: currentUser.getUsername(),
+      topDawg: currentUser.getUsername(),
       password: pass_usr
     }, {
       success: function(game) {
         // The object was saved successfully.
+        currentUser.add("currentTopDawg", game.id);
+        currentUser.save();
         window.open('landing', "_self");
       },
       error: function(gameScore, error) {
@@ -26,9 +28,6 @@ function createGame() {
         // error is a Parse.Error with an error code and message.
       }
     });
-
-    currentUser.add("currentTopDawg", game.id);
-    currentUser.save();
 }
 
 function joinGame() {
@@ -44,10 +43,17 @@ function joinGame() {
         alert("Successfully retrieved an object");
 
         // Do something with the returned Parse.Object values
-        alert(result.id + ' - ' + result.get('question'));
-        currentUser.add("currentPlayer", result.id);
-        currentUser.save();
-        window.open('landing', "_self");
+        if (result === undefined) {
+
+          alert("Not a valid Game Code!");
+        }
+        
+        else {
+
+          currentUser.add("currentPlayer", result.id);
+          currentUser.save();
+          window.open('landing', "_self");
+        }
       },
       error: function(error) {
         alert("Error: " + error.code + " " + error.message);

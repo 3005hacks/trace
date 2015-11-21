@@ -17,6 +17,7 @@
 
 	<script type="text/javascript" src="/js/landing.js"></script>
   <script type="text/javascript" src="/js/user.js"></script>
+  <script type="text/javascript" src="/js/howto.js"></script>
 
 </head>
 
@@ -24,26 +25,40 @@
 	<div class = "wrapper">
 		<div class = "header">
 			<center><div class = "menu-links">
-			<a href="">how to play</a>
-			<a id="login-link" onclick="showSignin()">sign in</a>
+			<a href="howto">how to play</a>
+			<a href="game_start">game</a>
 			</div></center>			
 		</div>
 
 		<div class = "content">
 
-			<div class = "logo">trace</div>
+			<a class = "logo" href="/">trace</a>
 
 			<div class = "tagline">trace your way to the truth!</div>
 			<div class = "tagline-2">here's how to play:</div>
 
+      <div class = "howto-slide" id = "howtoslide1">
+      <button class = "next" onclick = "slide2()">next</button>
       <div class = "howto-text">Ponder the answers to your friends' epic questions...</div>
-      <div><img src=""></div>
+      <div><img src="/img/trace1.png"></div>
+      </div>
+
+      <div class = "howto-slide" id = "howtoslide2">
+      <button class = "next" onclick = "slide3()">next</button> 
       <div class = "howto-text">Use your creative spirit to reach those answers...</div>
-      <div><img src=""></div>
+      <div><img src=""></div>     
+      </div>
+
+      <div class = "howto-slide" id = "howtoslide3">
+      <button class = "next" onclick = "slide4()">next</button>
       <div class = "howto-text">Trace a path to the truth...</div>
-      <div><img src=""></div>
+      <div><img src="/img/trace2.png"></div>
+      </div>
+
+      <div class = "howto-slide" id = "howtoslide4">
       <div class = "howto-text">Until it's your turn to take control! </div>
-      <div><img src=""></div>
+      <div><img src="/img/trace3.png"></div>
+      </div>
 
     </div>         
 
