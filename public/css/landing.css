@@ -144,3 +144,11 @@ input {
 #guess-form{
 
 }
+
+#winner-pop-up {
+	display: none;
+	width: 400px;
+	height: 200px;
+	background-color: #E7BB41;
+
+}
