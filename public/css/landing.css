@@ -151,8 +151,26 @@ input {
 
 }
 #winner-pop-up {
-	display: none;
-	width: 400px;
-	height: 200px;
+	text-align: center;
+	width: 60%;
+	margin: 0 20% 0 20%;
+	padding: 20% 0 20% 0;
+	height: 50%;
 	background-color: #E7BB41;
+	opacity: 0.95;
+	position: fixed;
+	border-radius: 20rem 20rem 20rem 20rem;
+}
+#play-again{
+	font-size: 10rem;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	height: auto;
+	width: auto;
+	font-family: 'Fredoka One';
+	cursor: pointer;
+}
+#play-again:hover{
+	color:#ACBED8 ;
+	
 }
