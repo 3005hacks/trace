@@ -67,8 +67,8 @@ a{
 	width: 20%;
 	margin: 2% 2% 2% 2%;
 }
-#game-form{
-	display: none;
+#game-wrap{
+	text-align: center;
 }
 
 /*LOGO*/
