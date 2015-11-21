@@ -129,7 +129,7 @@ socket.on('topDawgThumbsDown', function(thumbsDownId){
 socket.on('solutionFound', function(thumbsUpId){
 	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down-guess, .thumbs-down-solve').off();
 	$('#'+thumbsUpId).replaceWith($('<img class="thumbs-up-gold" src="/img/correct.png">'));
-	winner('Ganesh');
+	//winner('Ganesh');
 });
 
 function winner(winnerName) {
