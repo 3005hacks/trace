@@ -33,12 +33,12 @@ function isTopDawg() {
             // Do something with the returned Parse.Object values
             if (result === undefined) {
 
-                topDawg === false;
+                topDawg = false;
             }
             
             else {
 
-              topDawg === true;
+              topDawg = true;
             }
           },
           error: function(error) {
@@ -46,5 +46,9 @@ function isTopDawg() {
           }
         });
 }
+
+isTopDawg();
+
+
 
 
