@@ -17,28 +17,33 @@ $('#sign-in').click( function(){
 	showSignin();
 });
 
-var currentUser = Parse.User.current();
-var topDawg;
-var Game = Parse.Object.extend("Games");
-var query = new Parse.Query(Game);
-query.equalTo("topDawg", currentUser.getUsername());
+function isTopDawg() {
 
-query.first({
-      success: function(result) {
-        console.log("Successfully retrieved an object");
+    var currentUser = Parse.User.current();
+    var Game = Parse.Object.extend("Games");
+    var query = new Parse.Query(Game);
+    query.equalTo("topDawg", currentUser.getUsername());
 
-        // Do something with the returned Parse.Object values
-        if (result === undefined) {
+    query.first({
+          success: function(result) {
+            console.log("Successfully retrieved an object");
 
-          topDawg = false;
-        }
-        
-        else {
+            // Do something with the returned Parse.Object values
+            if (result === undefined) {
 
-          topDawg = true;
-        }
-      },
-      error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
-});
+              return false;
+            }
+            
+            else {
+
+              return true;
+            }
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+}
+
+var topDawg = isTopDawg();
+
