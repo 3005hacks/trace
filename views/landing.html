@@ -12,17 +12,6 @@
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500|Nunito|Lato:400,700' rel='stylesheet' type='text/css'>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font: 13px Helvetica, Arial; text-align: center; }
-    form { background: #000; padding: ; position: relative; bottom: 0; max-width: 40%; margin: 0 30% 0 30%;}
-    form input { border: 0; padding: 10px; width: 80%; margin-right: .5%; }
-    form button { width: 9%; background: #E7BB41; border: none; padding: 10px 10px 10px 0; text-align: center; color:white; font-size: 80%; overflow: hidden;}
-    form button { width: 9%; background: #E7BB41; border: none; padding: 10px 10px 10px 0; text-align: center; color:white; font-size: 80%; overflow: hidden;}
-    #messages { list-style-type: none; margin: 0; padding: 0; }
-    #messages li { padding: 5px 10px; }
-    #messages li:nth-child(odd) { background: #eee; }
-  </style>
 </head>
 <body>
 
@@ -63,8 +52,10 @@
     <div id = "guess-form">
         <ul id="messages"></ul>
         <form action="">
-        <input id="m" autocomplete="off" /><button>guess</button>
-        <input id="n" autocomplete="off" /><button>solve!</button>
+        <button id="guess">guess</button>
+        <button id="solve">solve!</button>
+        <input id="guess" autocomplete="off" />
+        <input id="solve" autocomplete="off" />
         </form>
     </div>
 
