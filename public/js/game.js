@@ -44,10 +44,17 @@ function joinGame() {
         alert("Successfully retrieved an object");
 
         // Do something with the returned Parse.Object values
-        alert(result.id + ' - ' + result.get('question'));
-        currentUser.add("currentPlayer", result.id);
-        currentUser.save();
-        window.open('landing', "_self");
+        if (result === undefined) {
+
+          alert("Not a valid Game Code!");
+        }
+        
+        else {
+
+          currentUser.add("currentPlayer", result.id);
+          currentUser.save();
+          window.open('landing', "_self");
+        }
       },
       error: function(error) {
         alert("Error: " + error.code + " " + error.message);
