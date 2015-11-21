@@ -47,7 +47,7 @@ function isTopDawg() {
         });
 
     var query2 = new Parse.Query(Game);
-    query2.decending("createdAt");
+    query2.descending("createdAt");
 
     query2.first({
           success: function(result) {
