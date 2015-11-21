@@ -8,10 +8,10 @@
     //signs up a new user
     function newUser() {
         var user = new Parse.User();
-        var username = encodeHTML(document.getElementById("new_username").value);
-        var password = encodeHTML(document.getElementById('new_password').value);
+        var username = encodeHTML(document.getElementById("new-username").value);
+        var password = encodeHTML(document.getElementById('new-password').value);
         var confirm_password = encodeHTML(document.getElementById("confirm-password").value);
-        var email = encodeHTML(document.getElementById('new_email').value);
+        var email = encodeHTML(document.getElementById('new-email').value);
         var access = encodeHTML(document.getElementById('access-code').value);
         var secret = "42BELOW";
 
