@@ -44,7 +44,7 @@
         user.signUp(null, {
           success: function(user) {
             // Hooray! Let them use the app now.
-            window.open('landing.html', "_self");
+            window.open('game_start', "_self");
           },
 
           error: function(user, error) {
@@ -62,7 +62,7 @@
       Parse.User.logIn(encodeHTML(document.getElementById('username').value), encodeHTML(document.getElementById('password').value), {
       success: function(user) {
         // Do stuff after successful login.
-            window.open("landing.html", "_self");
+            window.open("game_start", "_self");
         },
             error: function(user, error) {
         // The login failed. Check error to see why.
@@ -76,7 +76,7 @@
     //logs out the Parse user
     function logout(){
         Parse.User.logOut();
-        window.open('index.html', "_self");
+        window.open('index', "_self");
     }
 
     function logMeIn(){
@@ -97,7 +97,7 @@
     
     function fb_login(){
         logMeIn();
-        window.open('landing.html', "_self");
+        window.open('game_start', "_self");
     }
 
 $(document).ready(function(){

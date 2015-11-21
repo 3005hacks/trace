@@ -69,6 +69,7 @@ a{
 }
 #game-wrap{
 	text-align: center;
+	width: 100%;
 }
 
 /*LOGO*/
@@ -113,21 +114,6 @@ a{
 
 /*EMAIL SIGNUP*/
 #email-signup{
-	width: 50%;
-	text-align: center;
-	margin-bottom: 4%;
-}
-div.mc-field-group label{
-	display: block;
-	width: 100%;
-}
-div.mc-field-group input{
-	display: block;
-	margin-left: 2rem;
-}
-
-/*GAME FORM*/
-#game-form{
 	width: 50%;
 	text-align: center;
 	margin-bottom: 4%;
