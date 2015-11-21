@@ -38,9 +38,9 @@ function isGif(str){ //determines if a user input string is for a gif
 
 function getGifWord(str){//turns a user input string into a word suitable for gif search
 	var strArray;
-	strArray = str.split();
+	strArray = str.split("");
 
 	strArray.splice(0,6);
 
-	return strArray.join();
+	return strArray.join("");
 }
