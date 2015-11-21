@@ -14,7 +14,7 @@ function createGame() {
       gamename: gamename_usr,
       question: question_usr,
       hint: hint_usr,
-      username: currentUser.getUsername(),
+      topDawg: currentUser.getUsername(),
       password: pass_usr
     }, {
       success: function(game) {
