@@ -107,10 +107,10 @@ input {
 	width: 40%;
 	margin: 0 30% 0 30%;
 }
-#submit-clue{
+#input-guess{
 	display:none;
 }
-#submit-solve{
+#input-solve{
 	display:none;
 }
 #guess-button{

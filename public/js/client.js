@@ -1,14 +1,14 @@
 var socket = io();
 
 $('#guess-button').click(function(){
-	socket.emit('goonGuess', $('#m').val());
-	$('#m').val('');
+	socket.emit('goonGuess', $('#input-guess').val());
+	$('#input-guess').val('');
 	return false;
 });
 
 $('#solve-button').click(function(){
-	socket.emit('goonSolve', $('#m').val());
-	$('#m').val('');
+	socket.emit('goonSolve', $('#input-solve').val());
+	$('#input-solve').val('');
 	return false;
 });
 

@@ -1,12 +1,12 @@
 function showGuessInput(){
-	$('#submit-solve').hide();
+	$('#input-solve').hide();
 	$('#solve-button').hide();
-	$('#submit-clue').show();
+	$('#input-guess').show();
 	$('#guess-button').show();
 }
 function showSolveInput(){
-	$('#submit-solve').show();
+	$('#input-solve').show();
 	$('#solve-button').show();
-	$('#submit-clue').hide();
+	$('#input-guess').hide();
 	$('#guess-button').hide();
 }
