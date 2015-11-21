@@ -13,7 +13,7 @@
         var confirm_password = encodeHTML(document.getElementById("confirm-password").value);
         var email = encodeHTML(document.getElementById('new-email').value);
         var access = encodeHTML(document.getElementById('access-code').value);
-        var secret = "42BELOW";
+        //var secret = "42BELOW";
 
         // error - catches space in username
         if(username.split(" ").length > 1){
@@ -29,12 +29,12 @@
             return;
         }
 
-        // error - catches incorrect access code
-        if(access != secret){
-            $(".error_login").html("That access code is incorrect.");
-            $(".error_login").show();
-            return;
-        }
+        // // error - catches incorrect access code
+        // if(access != secret){
+        //     $(".error_login").html("That access code is incorrect.");
+        //     $(".error_login").show();
+        //     return;
+        // }
 
         user.set("username", username);
         user.set("password", password);
