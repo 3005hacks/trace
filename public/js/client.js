@@ -27,6 +27,8 @@ function showGuessInput(){
 	$('#solve-button').hide();
 	$('#input-guess').show();
 	$('#guess-button').show();
+	$('#showGuess').hide();
+	$('#showSolve').show();
 }
 
 function showSolveInput(){
@@ -34,6 +36,8 @@ function showSolveInput(){
 	$('#solve-button').show();
 	$('#input-guess').hide();
 	$('#guess-button').hide();
+	$('#showSolve').hide();
+	$('#showGuess').show();
 }
 
 socket.on('goonGuess', function(msg){
