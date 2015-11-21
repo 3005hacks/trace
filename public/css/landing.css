@@ -14,6 +14,7 @@ div{
 a{
 	text-decoration: none;
 	color: inherit;
+	font-size: 1.5rem;
 }
 .content{
 	text-align: center;
@@ -97,24 +98,23 @@ a{
 		}
 
 /*SUBMIT FORM*/
-form button { width: 9%; background: #E7BB41; border: none; padding: 10px 10px 10px 0; text-align: center; color:white; font-size: 80%; overflow: hidden;}
-    #messages { list-style-type: none; margin: 0; padding: 0; }
-    #messages li { padding: 5px 10px; }
-    #messages li:nth-child(odd) { background: #eee; }
+button { width: 18%; background: #E7BB41; border: none; padding: 10px 10px 10px 10px; text-align: center; color:white; 
+	font-size: 80%; overflow: hidden; font-size: 1.5rem; margin: 0 2% 0 2%;}
+}
 input {
 	display: block;
-	text-align: center;
+	text-align: left;
 	width: 40%;
 	margin: 0 30% 0 30%;
 }
-#submit-clue{
+#input-guess{
 	display:none;
 }
-#submit-solve{
+#input-solve{
 	display:none;
 }
 #guess-button{
-	display: none;
+	display: none
 }
 #solve-button{
 	display: none;
