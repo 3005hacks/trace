@@ -39,8 +39,6 @@
         user.set("username", username);
         user.set("password", password);
         user.set("email", email);
-        user.set("squads", []);
-        user.set("squadrons", []);
         //user.set("phone", document.getElementById('phone').text);
 
         user.signUp(null, {
