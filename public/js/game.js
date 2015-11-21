@@ -12,11 +12,12 @@ function startGame() {
     game.save({
       gamename: gamename_usr,
       question: question_usr,
-      hint: hint_usr
+      hint: hint_usr,
+      username: currentUser.getUsername()
     }, {
       success: function(game) {
         // The object was saved successfully.
-        alert("woohoo")
+        window.open('landing', "_self");
       },
       error: function(gameScore, error) {
         // The save failed.
