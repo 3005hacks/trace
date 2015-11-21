@@ -12,8 +12,8 @@ function startGame() {
     game.save({
       gamename: gamename_usr,
       question: question_usr,
-      hint: hint_usr
-      username: currentUser.username
+      hint: hint_usr,
+      username: currentUser.getUsername()
     }, {
       success: function(game) {
         // The object was saved successfully.
