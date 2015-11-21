@@ -25,22 +25,18 @@ app.get('/howto', function(req, res){
 io.on('connection', function(socket){
 
 	socket.on('goonGuess', function(msg){
-		console.log('1');
 		io.emit('goonGuess', msg);
 	});
 
 	socket.on('goonSolve', function(msg){
-		console.log('2');
 		io.emit('goonSolve', msg);
 	});
 
 	socket.on('topDawgThumbsUp', function(thumbsUpObj){
-		console.log('3');
 		io.emit('topDawgThumbsUp', thumbsUpObj);
 	});
 
 	socket.on('topDawgThumbsDown', function(thumbsDownObj){
-		console.log('4');
 		io.emit('topDawgThumbsDown', thumbsDownObj);
 	});
 
