@@ -34,6 +34,7 @@ socket.on('goonGuess', function(msg){
 
 	if (isGif(msg)) {
 		makeGif(getGifWord(msg), function(data) {
+			console.log(data);
 			var cardContent = '<img style= "height: 18rem" class="gif" src="' + data + '">';
 
 			$('#feed').append($(
@@ -68,17 +69,17 @@ socket.on('goonGuess', function(msg){
 
 
 	$('#thumbs-up-'+thumbsUpCount).click(function(){
-		if (topDawg){
+		// if (topDawg){
 			socket.emit('topDawgThumbsUp', this.id);
 	 		return false;
-		}
+		// }
  	});
 
 	$('#thumbs-down-'+thumbsDownCount).click(function(){
-		if (topDawg){
+		// if (topDawg){
 	 		socket.emit('topDawgThumbsDown', this.id);
 	 		return false;
-	 	}
+	 	// }
  	});
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
@@ -99,17 +100,17 @@ socket.on('goonSolve', function(msg){
 	));
 
 	$('#thumbs-up-'+thumbsUpCount).click(function(){
-		if (topDawg){
+		// if (topDawg){
 			socket.emit('solutionFound', this.id);
 	 		return false;
-	 	}
+	 	// }
  	});
 
 	$('#thumbs-down-'+thumbsDownCount).click(function(){
-		if (topDawg){
+		// if (topDawg){
 	 		socket.emit('topDawgThumbsDown', this.id);
 	 		return false;
-	 	}
+	 	// }
  	});
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
