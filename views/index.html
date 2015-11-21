@@ -1,40 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Trace</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<title>Trace!</title>
 
-	<!-- JS -->
-	<script src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/landing.css">
+
+	<!-- FONTS -->
+	<link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500|Nunito|Lato:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-	<style>
-		* { margin: 0; padding: 0; box-sizing: border-box; }
-		body { font: 13px Helvetica, Arial; }
-		form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-		form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-		form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-		#messages { list-style-type: none; margin: 0; padding: 0; }
-		#messages li { padding: 5px 10px; }
-		#messages li:nth-child(odd) { background: #eee; }
-	</style>
+	<!-- Javscripts -->
+	<script type="text/javascript" src="js/landing.js"></script>
+
 </head>
+
 <body>
+	<div class = "wrapper">
+		<div class = "header">
+			<center><div class = "menu-links">
+			<a href="">how to play</a>
+			<a id="login-link" onclick="showSignin()">sign in</a>
+			</div></center>			
+		</div>
 
-	<div class = "header">
-		<center><div class = "menu-links">
-		<a href="">me</a>
-		<a href="">how to play</a>
-		<a href="">new game</a>
-		</div></center>
+		<div class = "content">
+
+			<div class = "logo">trace</div>
+
+			<div class = "tagline">trace your way to the truth!</div>
+			<div class = "tagline-2">sign up below to start a game</div>
+
+			<!-- credit to sophstad -->
+            <div id="signup-form">
+              <form class="signup-form">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="new-username" class="input">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="new-password" class="input" minlength="6" maxlength="12">
+                <label for="passconf">Confirm Password</label>
+                <input type="password" name="passconf" id="confirm-password" class="input">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="new-email" class="input">
+                <label for="email">Access Code</label>
+                <input type="text" name="access" id="access-code" class="input">
+              </form>
+              <span>
+                <button class="small_button" onclick="newUser()">
+                  Join
+                </button>
+              </span>
+            </div>
+
+             <div id="signin-form">
+              <form class="signin-form">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="input">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="input" minlength="6" maxlength="12">
+              </form>
+              <span>
+                <button class="small_button" onclick="newUser()">
+                  Join
+                </button>
+              </span>
+            </div>  
+           </div>         
+
+		<div class = "footer">
+
+		</div>
 	</div>
-
-    <ul id="messages"></ul>
-    <form action="">
-		<input id="m" autocomplete="off" /><button>Send</button>
-    </form>
-	
-	<script type="text/javascript" src="/js/client.js"></script>
-
 </body>
+
 </html>
