@@ -12,12 +12,12 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
 
-	socket.on('goonClue', function(msg){
-		io.emit('goonClue', msg);
-	});
-
 	socket.on('goonGuess', function(msg){
 		io.emit('goonGuess', msg);
+	});
+
+	socket.on('goonSolve', function(msg){
+		io.emit('goonSolve', msg);
 	});
 
 });

@@ -97,7 +97,7 @@ a{
 		}
 
 /*SUBMIT FORM*/
-form button { width: 9%; background: #E7BB41; border: none; padding: 10px 10px 10px 0; text-align: center; color:white; font-size: 80%; overflow: hidden;}
+button { width: 9%; background: #E7BB41; border: none; padding: 10px 10px 10px 0; text-align: center; color:white; font-size: 80%; overflow: hidden;}
     #messages { list-style-type: none; margin: 0; padding: 0; }
     #messages li { padding: 5px 10px; }
     #messages li:nth-child(odd) { background: #eee; }
