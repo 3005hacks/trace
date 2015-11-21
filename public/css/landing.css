@@ -151,6 +151,7 @@ input {
 
 }
 #winner-pop-up {
+	display: none;
 	text-align: center;
 	width: 60%;
 	margin: 0 20% 0 20%;
