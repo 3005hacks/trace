@@ -23,8 +23,9 @@ function createGame() {
         // The object was saved successfully.
         currentUser.add("currentTopDawg", game.id);
         currentUser.save();
-        socket.emit('goToLandingPage', gamename_usr);
-        return false;
+        window.open('landing', "_self");
+        // socket.emit('goToLandingPage', gamename_usr);
+        // return false;
         
       },
       error: function(gameScore, error) {

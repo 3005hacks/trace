@@ -68,13 +68,17 @@ socket.on('goonGuess', function(msg){
 
 
 	$('#thumbs-up-'+thumbsUpCount).click(function(){
-		socket.emit('topDawgThumbsUp', this.id);
- 		return false;
+		if (topDawg){
+			socket.emit('topDawgThumbsUp', this.id);
+	 		return false;
+		}
  	});
 
 	$('#thumbs-down-'+thumbsDownCount).click(function(){
- 		socket.emit('topDawgThumbsDown', this.id);
- 		return false;
+		if (topDawg){
+	 		socket.emit('topDawgThumbsDown', this.id);
+	 		return false;
+	 	}
  	});
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
@@ -95,13 +99,17 @@ socket.on('goonSolve', function(msg){
 	));
 
 	$('#thumbs-up-'+thumbsUpCount).click(function(){
-		socket.emit('solutionFound', this.id);
- 		return false;
+		if (topDawg){
+			socket.emit('solutionFound', this.id);
+	 		return false;
+	 	}
  	});
 
 	$('#thumbs-down-'+thumbsDownCount).click(function(){
- 		socket.emit('topDawgThumbsDown', this.id);
- 		return false;
+		if (topDawg){
+	 		socket.emit('topDawgThumbsDown', this.id);
+	 		return false;
+	 	}
  	});
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
