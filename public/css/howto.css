@@ -1,8 +1,19 @@
+body, html{
+	background-color: #E8EBF7;
+	color: #ACBED8;
+}
+.logo{
+	color: #ACBED8;
+}
 .tagline-2{
-
+	color: #393E41;
 }
 .howto-text{
 	font-size: 3rem;
+	width: 50%;
+	margin: 3% 25% 3% 25%;
+	text-align: center;
+	
 }
 #howtoslide2{
 	display: none;
@@ -13,7 +24,12 @@
 #howtoslide4{
 	display: none;
 }
-.howto-slide img{
+.howto-slide{
 	height: 20%;
+	margin-top: 3%;
+}
+.howto-slide img{
+	height: 20rem;
 	width: auto;
+	border: 0.3rem solid #393E41;
 }
