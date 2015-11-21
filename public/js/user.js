@@ -51,8 +51,9 @@
 
           error: function(user, error) {
             // Show the error message somewhere and let the user try again.
-            $(".error_login").html(error.message);
-            $(".error_login").show();
+            //$(".error_login").html(error.message);
+            //$(".error_login").show();
+            alert("Error Signing In!!" + error.message);
 
           }
         })}
@@ -68,8 +69,9 @@
         },
             error: function(user, error) {
         // The login failed. Check error to see why.
-            $(".error_login").html(error.message);
-            $(".error_login").show();
+            //$(".error_login").html(error.message);
+            //$(".error_login").show();
+            alert("Error Signing In!!" + error.message);
         }
 
         })
