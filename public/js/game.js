@@ -45,7 +45,7 @@ function joinGame() {
 
     query.first({
       success: function(result) {
-        alert("Successfully retrieved an object");
+        //alert("Successfully retrieved an object");
 
         // Do something with the returned Parse.Object values
         if (result === undefined) {
