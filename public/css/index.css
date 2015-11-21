@@ -53,6 +53,24 @@ a{
 	display: none;
 }
 
+/*GAME FORM*/
+.game-form{
+	font-size: 1.4rem;
+	margin-top: 4%;
+}
+#game-form label{
+	display: block;
+}
+#game-form input{
+	display: inline-block;
+	height: 2rem;
+	width: 20%;
+	margin: 2% 2% 2% 2%;
+}
+#game-form{
+	display: none;
+}
+
 /*LOGO*/
 .logo{
 	text-align: center;
@@ -95,6 +113,21 @@ a{
 
 /*EMAIL SIGNUP*/
 #email-signup{
+	width: 50%;
+	text-align: center;
+	margin-bottom: 4%;
+}
+div.mc-field-group label{
+	display: block;
+	width: 100%;
+}
+div.mc-field-group input{
+	display: block;
+	margin-left: 2rem;
+}
+
+/*GAME FORM*/
+#game-form{
 	width: 50%;
 	text-align: center;
 	margin-bottom: 4%;

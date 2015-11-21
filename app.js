@@ -14,6 +14,10 @@ app.get('/landing', function(req, res){
 	res.sendFile(__dirname + '/views/landing.html');
 });
 
+app.get('/game_start', function(req, res){
+	res.sendFile(__dirname + '/views/game_start.html');
+});
+
 io.on('connection', function(socket){
 
 	socket.on('goonGuess', function(msg){
