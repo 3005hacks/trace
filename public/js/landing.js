@@ -45,6 +45,23 @@ function isTopDawg() {
             alert("Error: " + error.code + " " + error.message);
           }
         });
+
+    var query2 = new Parse.Query(Game);
+    query2.decending("createdAt");
+
+    query2.first({
+          success: function(result) {
+
+            console.log("Successfully retrieved an object");
+            $("#asker").HTML(result.get("topDawg"));
+            $("#asker>.card-content").HTML(result.get("question"));
+            $("#clue>.card-content").HTML(result.get("hint"));
+            ,
+          error: function(error) {
+
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
 }
 
 isTopDawg();
