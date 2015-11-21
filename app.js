@@ -36,12 +36,8 @@ io.on('connection', function(socket){
 		io.emit('topDawgThumbsDown', thumbsDownObj);
 	});
 
-	socket.on('solutionFound', function(thumbsUpObj){
-		io.emit('solutionFound', thumbsUpObj);
-	});
-
 });
 
-http.listen(3005, function(){
-	console.log('listening on *:3005');
+http.listen(3000, function(){
+	console.log('listening on *:3000');
 });

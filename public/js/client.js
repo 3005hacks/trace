@@ -37,7 +37,7 @@ socket.on('goonGuess', function(msg){
 			<div class = "lead-text">The clue for this game is...</div>\
 			<div class="card-content">' + msg + '</div>\
 			<div class="vote-deck">\
-				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-guess" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-guess" src="/img/thumbdown.png">\
+				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down" src="/img/thumbdown.png">\
 			</div>\
 		</div>\
 		'
@@ -45,12 +45,12 @@ socket.on('goonGuess', function(msg){
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
 
-	$('.thumbs-up-guess').click(function(){
+	$('.thumbs-up').click(function(){
 		socket.emit('topDawgThumbsUp', this.id);
 		return false;
 	});
 
-	$('.thumbs-down-guess').click(function(){
+	$('.thumbs-down').click(function(){
 		socket.emit('topDawgThumbsDown', this.id);
 		return false;
 	});
@@ -59,11 +59,11 @@ socket.on('goonGuess', function(msg){
 socket.on('goonSolve', function(msg){
 	$('#feed').append($(
 		'\
-		<div class = "card">\
-			<div class = "lead-text">Larry guessed...</div>\
+		<div id = "guess" class = "card">\
+			<div id = "guesser" class = "lead-text">Larry guessed...</div>\
 			<div class="card-content">' + msg + '</div>\
 			<div class="vote-deck">\
-				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-solve" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-solve" src="/img/thumbdown.png">\
+				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down" src="/img/thumbdown.png">\
 			</div>\
 		</div>\
 		'
@@ -71,37 +71,26 @@ socket.on('goonSolve', function(msg){
 	thumbsUpCount += 1;
 	thumbsDownCount += 1;
 
-	$('.thumbs-up-solve').click(function(){
-		socket.emit('solutionFound', this.id);
+	$('.thumbs-up').click(function(){
+		socket.emit('topDawgThumbsUp', this.id);
 		return false;
 	});
 
-	$('.thumbs-down-solve').click(function(){
+	$('.thumbs-down').click(function(){
 		socket.emit('topDawgThumbsDown', this.id);
 		return false;
 	});
 });
 
 socket.on('topDawgThumbsUp', function(thumbsUpId){
-	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down-guess, .thumbs-down-solve').off();
+	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down').off();
 	$('#'+thumbsUpId).replaceWith($('<img class="thumbs-up-gold" src="/img/correct.png">'));
 });
 
 socket.on('topDawgThumbsDown', function(thumbsDownId){
-	$('#'+thumbsDownId).closest('.vote-deck').children('.thumbs-up-guess, .thumbs-up-solve').off();
+	$('#'+thumbsDownId).closest('.vote-deck').children('.thumbs-up').off();
 	$('#'+thumbsDownId).replaceWith($('<img class="thumbs-down-gold" src="/img/wrong.png">'));
 });
-
-socket.on('solutionFound', function(thumbsUpId){
-	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down').off();
-	$('#'+thumbsUpId).replaceWith($('<img class="thumbs-up-gold" src="/img/correct.png">'));
-	winner('Ganesh');
-});
-
-function winner(winnerName) {
-	$('#winner-pop-up').append(winnerName + 'has won!');
-	$('#winner-pop-up').show();
-}
 
 function toggleID(element){
 	$('#' + 'element').toggle();
@@ -120,8 +109,4 @@ function showSignin(){
 
 $('#sign-in').click( function(){
 	showSignin();
-});
-
-$('#play-again').click(function(){
-	window.location.replace('/game_start');
 });
