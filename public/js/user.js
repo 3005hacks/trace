@@ -46,7 +46,7 @@
         user.signUp(null, {
           success: function(user) {
             // Hooray! Let them use the app now.
-            window.open('feed.html', "_self");
+            window.open('landing.html', "_self");
           },
 
           error: function(user, error) {
@@ -64,7 +64,7 @@
       Parse.User.logIn(encodeHTML(document.getElementById('username').value), encodeHTML(document.getElementById('password').value), {
       success: function(user) {
         // Do stuff after successful login.
-            window.open("feed.html", "_self");
+            window.open("landing.html", "_self");
         },
             error: function(user, error) {
         // The login failed. Check error to see why.
@@ -99,7 +99,7 @@
     
     function fb_login(){
         logMeIn();
-        window.open('feed.html', "_self");
+        window.open('landing.html', "_self");
     }
 
 $(document).ready(function(){
