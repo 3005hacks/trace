@@ -3,12 +3,16 @@
 <head>
 	<title>Trace</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<!-- FONTS -->
+	<link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500|Nunito|Lato:400,700' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 	<div class = "header">
 		<center><div class = "menu-links">
-		<a href="">me</a>
 		<a href="">how to play</a>
+		<a href="">me</a>
 		<a href="">new game</a>
 		</div></center>
 	</div>
@@ -18,17 +22,29 @@
 	</div>
 
 	<div class = "content">
+		<div class = "logo">trace</div>
+
 		<div id = "question" class = "card">
+			<div id = "asker" class = "lead-text">David asked...</div>
 			<div class="card-content">What is my deepest desire? (question)</div>
 		</div>
 		<div id = "clue" class = "card">
+			<div id = "clue-lead" class = "lead-text">The clue for this game is...</div>
 			<div class="card-content">Back to The Future (clue)</div>
 		</div>
 		<div id = "guess" class = "card">
+			<div id = "guesser" class = "lead-text">Larry guessed...</div>
 			<div class="card-content">Self-lacing sneakers? (guess)</div>
+			<div class="vote-deck">
+				<img src="img/thumb.svg"> <img src="img/thumbdown.svg">
+			</div>
 		</div>
 		<div id = "solution" class = "card">
+			<div id = "solver" class = "lead-text">Josh has attempted an answer!</div>
 			<div class="card-content">True love (solution)</div>
+			<div class="vote-deck">
+				<img src="img/thumb.svg"> <img src="img/thumbdown.svg">
+			</div>
 		</div>
 	</div>
 	<div class = " footer">
