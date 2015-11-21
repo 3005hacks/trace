@@ -27,8 +27,8 @@ function createGame() {
       }
     });
 
-    // currentUser.add("currentTopDawg", game.id);
-    // currentUser.save();
+    currentUser.add("currentTopDawg", game.id);
+    currentUser.save();
 }
 
 function joinGame() {
@@ -45,8 +45,8 @@ function joinGame() {
 
         // Do something with the returned Parse.Object values
         alert(result.id + ' - ' + result.get('question'));
-        // currentUser.add("currentPlayer", result.id);
-        // currentUser.save();
+        currentUser.add("currentPlayer", result.id);
+        currentUser.save();
         window.open('landing', "_self");
       },
       error: function(error) {
