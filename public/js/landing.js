@@ -27,11 +27,12 @@ function isTopDawg() {
     query.first({
           success: function(result) {
             console.log("Successfully retrieved an object");
+            console.log(result === undefined);
 
             // Do something with the returned Parse.Object values
             if (result === undefined) {
 
-              return false;
+                return false;
             }
             
             else {
