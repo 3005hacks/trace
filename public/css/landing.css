@@ -1,0 +1,165 @@
+/*HTML ELEMENTS*/
+body, html{
+	height: 100%;
+	background-color: #bc33ff;
+	font-family: 'Lato', 'sans-serif';
+	color: white;
+	font-size: 10px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+div{
+	margin: 2% 0 2% 0;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+/*HEADER*/
+.header{
+	width: 100%;
+	text-align: center;
+}
+.menu-links{
+	width: 25%;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+.menu-links a{
+	font-size: 1.5rem;
+}
+.content{
+	text-align: center;
+}
+
+/*SIGNUP FORM*/
+.signup-form, .signin-form{
+	font-size: 1.4rem;
+	margin-top: 4%;
+}
+#signup-form label, #signin-form label{
+	display: block;
+}
+#signup-form input, #signin-form input{
+	display: inline-block;
+	height: 2rem;
+	width: 20%;
+	margin: 2% 2% 2% 2%;
+}
+#signin-form{
+	display: none;
+}
+
+/*LOGO*/
+.logo{
+	text-align: center;
+	max-height: 10%;
+	margin-bottom: 4%;
+	font-family: 'Fredoka One';
+	font-size: 20rem;
+}
+.logo img{
+	height: 20rem;
+	width: auto;
+}
+
+/*TAGLINE*/
+.tagline{
+	font-size: 5rem;
+	text-align: center;
+	letter-spacing: 0.4rem;
+	word-spacing: 0.1rem;
+	width: 100%;
+}
+
+.tagline-2{
+	font-size: 3rem;
+	text-align: center;
+	letter-spacing: 0.4rem;
+	word-spacing: 0.1rem;
+}
+
+/*DOWNLOAD BUTTON*/
+.download-button{
+	text-align: center;
+}
+.download-button img{
+	margin-top: 4%;
+	margin-bottom: 4%;
+	height: 6rem;
+}
+
+/*EMAIL SIGNUP*/
+#email-signup{
+	width: 50%;
+	text-align: center;
+	margin-bottom: 4%;
+}
+div.mc-field-group label{
+	display: block;
+	width: 100%;
+}
+div.mc-field-group input{
+	display: block;
+	margin-left: 2rem;
+}
+
+/*TEASER*/
+.teaser{
+	height: auto;
+	background-color: white;
+	color: black;
+	margin: 0;
+	opacity: 0.9;
+	font-size: 2.7rem;
+	padding: 2.5rem 3% 2.5rem 3%;
+	letter-spacing: 0.7rem;
+	word-spacing: 0.5rem;
+
+}
+.teaser img{
+	height: 2.7rem;
+	float: right;
+}
+.teaser p{
+
+}
+
+/*SECTION*/
+.section-content{
+	display: none;
+}
+.section{
+	margin: 0;
+}
+
+/*ABOUT SECTION*/
+#about-section .teaser{
+
+}
+#about-content{
+
+}
+
+/*TEAM SECTION*/
+#team-section .teaser{
+	background-color: #65ccd8;
+	color: white;
+}
+#team-content{
+
+}
+
+/*COMING SOON SECTION*/
+#comingsoon-section .teaser{
+
+}
+#comingsoon-content{
+
+}
+
+.footer{
+	margin: 0;
+}

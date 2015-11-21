@@ -1,7 +1,7 @@
 /*HTML ELEMENTS*/
 body, html{
 	height: 100%;
-	background-color: #bc33ff;
+	background-color: #44BBA4;
 	font-family: 'Lato', 'sans-serif';
 	color: white;
 	font-size: 10px;
@@ -15,6 +15,14 @@ a{
 	text-decoration: none;
 	color: inherit;
 }
+.content{
+	text-align: center;
+	height: 100%;
+}
+.footer{
+	margin: 0;
+}
+
 
 /*HEADER*/
 .header{
@@ -29,45 +37,57 @@ a{
 .menu-links a{
 	font-size: 1.5rem;
 }
-.content{
+
+/*LOGO*/
+.logo{
 	text-align: center;
-	height: 100%;
+	margin-bottom: 4%;
+	font-family: 'Fredoka One';
+	font-size: 10rem;
 }
+
 /*GAME STYLING*/
 .card{
 	margin: 4% 30% 4% 30%;
-	font-size: 1.8rem;
-}
-/*QUESTION*/
-#question{
-	border: 0.2rem solid;
-	position: relative;
-	height: 10%;
+	font-size: 2rem;
+	border: 0.2rem solid white;	
 	width: 40%;
+	padding: 0 0 2% 2%;
+	background-color: #393E41;
+	color: white;
 }
-/*CLUE*/
-#clue{
-	border: 0.2rem solid;
-	position: relative;
-	height: 10%;
-	width: 40%;
+.lead-text{
+	font-size: 1.5rem;
+	text-align: left;	
 }
-/*GUESS*/
-#guess{
-	border: 0.2rem solid;
-	position: relative;
-	height: 15%;
-	width: 40%;
-}
+	/*QUESTION*/
+	#question{
+		min-height: 10%;
+		background-color: #E7BB41;
+		border: 0.2rem solid #393E41;
+		color: white;
+	}
+		#asker{
 
-/*SECTION*/
-.section-content{
-	display: none;
-}
-.section{
-	margin: 0;
-}
+		}
+	/*CLUE*/
+	#clue{
+		min-height: 10%;
+	}
+		#clue-lead{
 
-.footer{
-	margin: 0;
-}
+		}
+	/*GUESS*/
+	#guess{
+		min-height: 10%;
+	}
+		#guesser{
+
+		}
+	/*SOLUTION*/
+	#solution{
+		min-height: 10%;
+	}
+		#solver{
+
+		}
