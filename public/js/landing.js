@@ -53,7 +53,7 @@ function isTopDawg() {
           success: function(result) {
 
             console.log("Successfully retrieved an object");
-            $("#asker").html(result.get("topDawg"));
+            $("#asker").html(result.get("topDawg") + " asked...");
             $("#question>.card-content").html(result.get("question"));
             $("#clue>.card-content").html(result.get("hint"));
             },

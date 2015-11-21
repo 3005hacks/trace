@@ -40,7 +40,7 @@ socket.on('goonGuess', function(msg){
 			$('#feed').append($(
 				'\
 				<div class = "card">\
-					<div class = "lead-text">The clue for this game is...</div>\
+					<div class = "lead-text">A new clue has arrived...</div>\
 					<div class="card-content">' + cardContent + '</div>\
 					<div class="vote-deck">\
 						<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-guess" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-guess" src="/img/thumbdown.png">\
@@ -57,7 +57,7 @@ socket.on('goonGuess', function(msg){
 		$('#feed').append($(
 			'\
 			<div class = "card">\
-				<div class = "lead-text">The clue for this game is...</div>\
+				<div class = "lead-text">A new clue has arrived...</div>\
 				<div class="card-content">' + cardContent + '</div>\
 				<div class="vote-deck">\
 					<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-guess" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-guess" src="/img/thumbdown.png">\
@@ -90,7 +90,7 @@ socket.on('goonSolve', function(msg){
 	$('#feed').append($(
 		'\
 		<div class = "card">\
-			<div class = "lead-text">Larry guessed...</div>\
+			<div class = "lead-text">Someone guessed...</div>\
  			<div class="card-content">' + msg + '</div>\
  			<div class="vote-deck">\
 				<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-solve" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-solve" src="/img/thumbdown.png">\
