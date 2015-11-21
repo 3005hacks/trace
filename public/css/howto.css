@@ -1,0 +1,19 @@
+.tagline-2{
+
+}
+.howto-text{
+	font-size: 3rem;
+}
+#howtoslide2{
+	display: none;
+}
+#howtoslide3{
+	display: none;
+}
+#howtoslide4{
+	display: none;
+}
+.howto-slide img{
+	height: 20%;
+	width: auto;
+}
