@@ -21,6 +21,6 @@ var currentUser = Parse.User.current();
 
 if (!currentUser) {
 
-	window.open('index', "_self");
+	window.open('/', "_self");
 }
 
