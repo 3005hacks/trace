@@ -1,6 +1,6 @@
-function toggleID(element){
-	$('#' + 'element').toggle();
-}
+// function toggleID(element){
+// 	$('#' + 'element').toggle();
+// }
 
 function showSignin(){
 	$('#signup-form').toggle();
@@ -16,3 +16,11 @@ function showSignin(){
 $('#sign-in').click( function(){
 	showSignin();
 });
+
+var currentUser = Parse.User.current();
+
+if (!currentUser) {
+
+	window.open('index', "_self");
+}
+

@@ -5,6 +5,7 @@
 <head>
 
   <link rel="stylesheet" type="text/css" href="/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/css/game_start.css">
 
   <!-- FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
@@ -28,7 +29,7 @@
     <div class = "header">
       <center><div class = "menu-links">
       <a href="">how to play</a>
-      <!-- <a id="login-link" onclick="showSignin()">sign in</a> -->
+      <a id="login-link" onclick="showSignin()">sign out</a>
       </div></center>     
     </div>
 
@@ -37,26 +38,45 @@
       <div class = "logo">trace</div>
 
       <div class = "tagline">trace your way to the truth!</div>
-      <div class = "tagline-2">fill out the form below to start a game</div>
+      <div class = "tagline-2">choose an option to start a game</div>
 
+      <div id = "start-buttons">
+        <button onclick="showJoinGame()">Join Game</button>
+        <button onclick="showNewGame()">Create Game</button>
+      </div>
           <div id="game-wrap">
             <div id="game-form">
               <form class="game-form">
-                <label for="gamename">Title of Game</label>
+                <label for="gamename">Game Title</label>
                 <input type="text" name="gamename" id="new-gamename" class="input">
-                <label for="question">What is the Question You Want to Use?</label>
+                <label for="question">What's the question?'</label>
                 <input type="text" name="question" id="new-question" class="input">
-                <label for="hint">What is the Initial Hint You Would Like to Give?</label>
+                <label for="hint">What is the initial clue you want to give?</label>
                 <input type="text" name="hint" id="new-hint" class="input">
+                <label for="hint">Please create a passcode for the game.</label>
+                <input type="text" name="pass" id="new-pass" class="input">                
                 <!-- <label for="email">Access Code</label>
                 <input type="text" name="access" id="access-code" class="input"> -->
               </form>
               <span>
-                <button class="small_button" onclick="startGame()">
+                <button class="small_button" onclick="createGame()">
                   Go In!
                 </button>
               </span>
             </div>
+
+            <div id="join-game-form">
+              <form class="game-form">
+                <label for="gamepass">Game Code</label>
+                <input type="text" name="gamepass" id="game-pass" class="input">
+              </form>
+              <span>
+                <button class="small_button" onclick="joinGame()">
+                  play
+                </button>
+              </span>
+            </div>
+
           </div>
             
     <div class = "footer">
