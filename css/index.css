@@ -1,0 +1,73 @@
+/*HTML ELEMENTS*/
+body, html{
+	height: 100%;
+	background-color: #bc33ff;
+	font-family: 'Lato', 'sans-serif';
+	color: white;
+	font-size: 10px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+div{
+	margin: 2% 0 2% 0;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+/*HEADER*/
+.header{
+	width: 100%;
+	text-align: center;
+}
+.menu-links{
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+}
+.menu-links a{
+	font-size: 1.5rem;
+}
+.content{
+	text-align: center;
+	height: 100%;
+}
+/*GAME STYLING*/
+.card{
+	margin: 4% 30% 4% 30%;
+	font-size: 1.8rem;
+}
+/*QUESTION*/
+#question{
+	border: 0.2rem solid;
+	position: relative;
+	height: 10%;
+	width: 40%;
+}
+/*CLUE*/
+#clue{
+	border: 0.2rem solid;
+	position: relative;
+	height: 10%;
+	width: 40%;
+}
+/*GUESS*/
+#guess{
+	border: 0.2rem solid;
+	position: relative;
+	height: 15%;
+	width: 40%;
+}
+
+/*SECTION*/
+.section-content{
+	display: none;
+}
+.section{
+	margin: 0;
+}
+
+.footer{
+	margin: 0;
+}
