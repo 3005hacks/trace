@@ -27,8 +27,8 @@ function createGame() {
       }
     });
 
-    // currentUser.add("currentTopDawg", game.id);
-    // currentUser.save();
+    currentUser.add("currentTopDawg", game.id);
+    currentUser.save();
 }
 
 function joinGame() {
@@ -36,7 +36,7 @@ function joinGame() {
     var pass_given = encodeHTML(document.getElementById("game-pass").value);
 
     var Game = Parse.Object.extend("Games");
-    var query = new Query(Game);
+    var query = new Parse.Query(Game);
     query.equalTo("password", pass_given);
 
     query.first({
@@ -45,8 +45,8 @@ function joinGame() {
 
         // Do something with the returned Parse.Object values
         alert(result.id + ' - ' + result.get('question'));
-        // currentUser.add("currentPlayer", result.id);
-        // currentUser.save();
+        currentUser.add("currentPlayer", result.id);
+        currentUser.save();
         window.open('landing', "_self");
       },
       error: function(error) {

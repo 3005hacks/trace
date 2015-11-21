@@ -18,6 +18,10 @@ app.get('/game_start', function(req, res){
 	res.sendFile(__dirname + '/views/game_start.html');
 });
 
+app.get('/howto', function(req, res){
+	res.sendFile(__dirname + '/views/howto.html');
+});
+
 io.on('connection', function(socket){
 
 	socket.on('goonGuess', function(msg){
