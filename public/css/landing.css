@@ -75,6 +75,7 @@ a{
 }
 #feed{
 	overflow: scroll;
+	overflow-x: hidden; 
 	max-height: 70%;
 }
 	/*QUESTION*/
