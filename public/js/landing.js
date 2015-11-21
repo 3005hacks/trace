@@ -1,6 +1,7 @@
 // function toggleID(element){
 // 	$('#' + 'element').toggle();
 // }
+var topDawg;
 
 function showSignin(){
 	$('#signup-form').toggle();
@@ -32,12 +33,12 @@ function isTopDawg() {
             // Do something with the returned Parse.Object values
             if (result === undefined) {
 
-                return false;
+                topDawg === false;
             }
             
             else {
 
-              return true;
+              topDawg === true;
             }
           },
           error: function(error) {
@@ -46,5 +47,4 @@ function isTopDawg() {
         });
 }
 
-var topDawg = isTopDawg();
 
