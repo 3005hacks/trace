@@ -78,7 +78,7 @@
     //logs out the Parse user
     function logout(){
         Parse.User.logOut();
-        window.open('index', "_self");
+        window.open('/', "_self");
     }
 
     function logMeIn(){

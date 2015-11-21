@@ -2,7 +2,7 @@ var currentUser = Parse.User.current();
 
 if (!currentUser) {
 
-    window.open('index', "_self");
+    window.open('/', "_self");
 }
 
 function createGame() {
@@ -43,7 +43,7 @@ function joinGame() {
     var Game = Parse.Object.extend("Games");
     var query = new Query(Game);
     query.equalTo("password", pass_given);
-    
+
     query.first({
       success: function(result) {
         alert("Successfully retrieved an object");
