@@ -32,12 +32,16 @@ io.on('connection', function(socket){
 		io.emit('goonSolve', msg);
 	});
 
-	socket.on('topDawgThumbsUp', function(thumbsUpObj){
-		io.emit('topDawgThumbsUp', thumbsUpObj);
+	socket.on('topDawgThumbsUp', function(thumbsUpId){
+		io.emit('topDawgThumbsUp', thumbsUpId);
 	});
 
-	socket.on('topDawgThumbsDown', function(thumbsDownObj){
-		io.emit('topDawgThumbsDown', thumbsDownObj);
+	socket.on('topDawgThumbsDown', function(thumbsDownId){
+		io.emit('topDawgThumbsDown', thumbsDownId);
+	});
+
+	socket.on('solutionFound', function(thumbsUpId){
+		io.emit('solutionFound', thumbsUpId);
 	});
 
 });

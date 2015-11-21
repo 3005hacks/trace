@@ -116,14 +116,15 @@ socket.on('topDawgThumbsDown', function(thumbsDownId){
 	$('#'+thumbsDownId).closest('.vote-deck').children('.thumbs-up-guess, .thumbs-up-solve').off();
 	$('#'+thumbsDownId).replaceWith($('<img class="thumbs-down-gold" src="/img/wrong.png">'));
 });
+
 socket.on('solutionFound', function(thumbsUpId){
-	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down').removeAttr("onclick").unbind();
+	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down-guess, .thumbs-down-solve').off();
 	$('#'+thumbsUpId).replaceWith($('<img class="thumbs-up-gold" src="/img/correct.png">'));
 	winner('Ganesh');
 });
 
 function winner(winnerName) {
-	$('#winner-pop-up').append(winnerName + 'has won!');
+	$('#winner-pop-up').append(winnerName + ' has won!');
 	$('#winner-pop-up').show();
 }
 

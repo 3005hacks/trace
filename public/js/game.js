@@ -1,3 +1,5 @@
+var socket = io();
+
 var currentUser = Parse.User.current();
 
 function createGame() {
@@ -21,11 +23,9 @@ function createGame() {
         // The object was saved successfully.
         currentUser.add("currentTopDawg", game.id);
         currentUser.save();
-
-        socket.on('goToLandingPage', function(){
-          res.send('hello_world');
-          // window.open('landing', "_self");
-        });
+        socket.emit('goToLandingPage', gamename_usr);
+        return false;
+        
       },
       error: function(gameScore, error) {
         // The save failed.
@@ -78,3 +78,10 @@ function showJoinGame(){
 	$('#game-form').hide();
 	$('#join-game-form').show();
 }
+
+socket.on('goToLandingPage', function(data){
+  console.log(data);
+  var w = window.open('landing', "_self");
+  w.opener.$('#asker').css('background-color', 'green');
+
+});
