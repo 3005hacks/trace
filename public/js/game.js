@@ -36,7 +36,7 @@ function joinGame() {
     var pass_given = encodeHTML(document.getElementById("game-pass").value);
 
     var Game = Parse.Object.extend("Games");
-    var query = new Query(Game);
+    var query = new Parse.Query(Game);
     query.equalTo("password", pass_given);
 
     query.first({
