@@ -53,6 +53,9 @@ a{
 	display: none;
 }
 
+button { width: 18%; background: #E7BB41; border: none; padding: 10px 10px 10px 10px; text-align: center; color:white; 
+	font-size: 80%; overflow: hidden; font-size: 1.5rem; margin: 0 2% 0 2%;}
+
 /*GAME FORM*/
 .game-form{
 	font-size: 1.4rem;
