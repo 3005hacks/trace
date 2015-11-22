@@ -2,76 +2,71 @@
     Login, Signup, and Logout Functions
     These functions deal with user accounts.    
         
-
+    
 
 */
     //signs up a new user
     function newUser() {
+
         var user = new Parse.User();
         var username = encodeHTML(document.getElementById("new-username").value);
         var password = encodeHTML(document.getElementById('new-password').value);
         var confirm_password = encodeHTML(document.getElementById("confirm-password").value);
         var email = encodeHTML(document.getElementById('new-email').value);
-        //var access = encodeHTML(document.getElementById('access-code').value);
-        //var secret = "42BELOW";
 
         // error - catches space in username
         if(username.split(" ").length > 1){
-            $(".error_login").html("No spaces are allowed in your username.");
-            $(".error_login").show();
+
+            alert("No spaces are allowed in your username.");
             return;
         }
 
         // error - catches different passwords
         if(password != confirm_password){
-            $(".error_login").html("Your passwords don't match.");
-            $(".error_login").show();
+
+            alert("Your passwords don't match.");
             return;
         }
 
-        // // error - catches incorrect access code
-        // if(access != secret){
-        //     $(".error_login").html("That access code is incorrect.");
-        //     $(".error_login").show();
-        //     return;
-        // }
-
+        // Setting initial user properties
         user.set("username", username);
         user.set("password", password);
         user.set("email", email);
         user.set("currentTopDawg", []);
         user.set("currentPlayer", []);
-        //user.set("phone", document.getElementById('phone').text);
 
+        // Parse function that creates user in Parse database
         user.signUp(null, {
           success: function(user) {
-            // Hooray! Let them use the app now.
+
+            // Open next page
             window.open('game_start', "_self");
           },
 
           error: function(user, error) {
-            // Show the error message somewhere and let the user try again.
-            //$(".error_login").html(error.message);
-            //$(".error_login").show();
+            
             alert("please try again");
-            Parse.User.logOut();
 
+            // Sometimes a user creates a new account without knowing they are
+            // already signed in, so this prevents this
+            Parse.User.logOut();
           }
         })}
         
       
-     //logs in a new Parse user 
+    // Logs in a new Parse user 
     function login(){
       
       Parse.User.logIn(encodeHTML(document.getElementById('username').value), encodeHTML(document.getElementById('password').value), {
       success: function(user) {
-        // Do stuff after successful login.
+
+            // Open next window
             window.open("game_start", "_self");
         },
             error: function(user, error) {
-        // The login failed. Check error to see why.
-            //$(".error_login").html(error.message);
-            //$(".error_login").show();
+
+            // Sometimes a user creates a new account without knowing they are
+            // already signed in, so this prevents this
             alert("please try again");
             Parse.User.logOut();
         }
@@ -85,7 +80,9 @@
         window.open('/', "_self");
     }
 
+    // Facebook logging in
     function logMeIn(){
+        
           Parse.FacebookUtils.logIn(null, {
           success: function(user) {
             if (!user.existed()) {
