@@ -17,7 +17,7 @@
   <script type="text/javascript">Parse.initialize("8kX4XI8S4kGRt1A2Q14HusYMvy8l5eh0dAuprShH", "Ljl36WNwixt7TN5WtmOxVvHHq40vCCHB7Lcdj2N7")</script>
   
 	<!-- Javscripts -->
-	<script type="text/javascript" src="/js/landing.js"></script>
+	<script type="text/javascript" src="/js/client.js"></script>
   <script type="text/javascript" src="/js/user.js"></script>
 
 </head>
@@ -25,10 +25,12 @@
 <body>
 	<div class = "wrapper">
 		<div class = "header">
-			<center><div class = "menu-links">
-			<a href="howto">how to play</a>
-			<a id="login-link" onclick="showSignin()">sign in</a>
-			</div></center>			
+        <center><div class = "menu-links">
+      <a href="howto">how to play</a>
+      <a id="login-link" onclick="showSignin()">sign in</a>
+      <a href="" onclick="showSignup()">sign up</a>
+      </div></center> 
+
 		</div>
 
 		<div class = "content">
@@ -37,9 +39,10 @@
 
       <iframe width="560" height="315" src="https://www.youtube.com/embed/mO77BdDwu0Q" frameborder="0" allowfullscreen></iframe>
 
-			<div class = "tagline">trace your way to the <span id="truth">truth!<span></div>
-			<div class = "tagline-2">sign up below to start a game</div>
 
+			<!-- <div class = "tagline">trace your way to the <span id="truth">truth!<span></div> -->
+<!-- 			<div class = "tagline-2">sign up below to start a game</div>
+ -->
 			<!-- credit to sophstad -->
             <div id="signup-form">
               <form class="signup-form">

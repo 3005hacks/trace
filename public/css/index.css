@@ -1,7 +1,7 @@
 /*HTML ELEMENTS*/
 body, html{
 	height: 100%;
-	background-color: #ACBED8;
+	background-color: black;
 	font-family: 'Lato', 'sans-serif';
 	color: white;
 	font-size: 10px;
@@ -24,7 +24,7 @@ a{
 	text-align: center;
 }
 .menu-links{
-	width: 25%;
+	width: 50%;
 	text-align: center;
 	display: flex;
 	justify-content: space-between;
@@ -56,7 +56,9 @@ a{
 #signin-form{
 	display: none;
 }
-
+#signup-form{
+	display: none;
+}
 /*GAME FORM*/
 .game-form{
 	font-size: 1.4rem;

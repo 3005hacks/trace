@@ -107,7 +107,7 @@ a{
 		}
 		.gif{
 			height: 10rem;
-			width: auto;
+			max-width: 100%;
 		}
 	/*SOLUTION*/
 	#solution{

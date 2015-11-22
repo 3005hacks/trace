@@ -3,21 +3,6 @@
 // }
 var topDawg;
 
-function showSignin(){
-	$('#signup-form').toggle();
-	$('#signin-form').toggle();
-	if($('#login-link').html() == "sign up"){
-		$('#login-link').html("sign in");
-	}
-	else if($('#login-link').html() == "sign in"){
-		$('#login-link').html("sign up");
-	}	
-}
-
-$('#sign-in').click( function(){
-	showSignin();
-});
-
 function isTopDawg() {
 
     var currentUser = Parse.User.current();
