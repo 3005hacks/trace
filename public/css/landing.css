@@ -145,8 +145,11 @@ input {
 }
 #solve-button{
 	display: none;
-	background: #DD4646;
+	background: #393E41;
 	width:10%;
+}
+#showSolve{
+	background-color: #DD4646;
 }
 #guess-form{
 
