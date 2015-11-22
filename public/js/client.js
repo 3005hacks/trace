@@ -142,13 +142,20 @@ function toggleID(element){
 }
 
 function showSignin(){
-	$('#signin-form').toggle();
+	$('#signin-form').show();
+	$('#signup-form').hide();
+	$('#vid').hide();
 	// if($('#login-link').html() == "sign up"){
 	// 	$('#login-link').html("sign in");
 	// }
 	// else if($('#login-link').html() == "sign in"){
 	// 	$('#login-link').html("sign up");
 	// }	
+}
+function showSignup(){
+	$('#signup-form').show();
+	$('#signin-form').hide();
+	$('#vid').hide();
 }
 
 $('#sign-in').click( function(){

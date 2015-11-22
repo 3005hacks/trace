@@ -31,6 +31,7 @@ a{
 }
 .menu-links a{
 	font-size: 2rem;
+	color: #E7BB41;
 }
 .content{
 	text-align: center;
@@ -190,5 +191,11 @@ div.mc-field-group input{
 .footer{
 	margin: 0;
 }
+	#copyright{
+		font-size: 1.5rem;
+		text-align: center;
+		color: #E7BB41;
+		text-decoration: none;
+	}
 button { width: 18%; background: #E7BB41; border: none; padding: 10px 10px 10px 10px; text-align: center; color:white; 
 	font-size: 80%; overflow: hidden; font-size: 1.5rem; margin: 0 2% 0 2%;}
