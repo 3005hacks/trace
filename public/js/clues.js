@@ -27,8 +27,18 @@ function makeGif(word, callback){ //returns a url for the gif
 }
 
 function isGif(str){ //determines if a user input string is for a gif
+	str = str.toLowerCase();
+	var gif = "gif...";
+	var gifShort = "gif..";
+	var gifLong = "gif....";
 
-	if(str.indexOf("gif...") == 0){
+	if(str.indexOf(gif.toLowerCase()) == 0){
+		return true;
+	}
+	if(str.indexOf(gifShort.toLowerCase()) == 0){
+		return true;
+	}
+	if(str.indexOf(gifLong.toLowerCase()) == 0){
 		return true;
 	}
 
