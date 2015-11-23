@@ -1,4 +1,5 @@
-function makeGif(word, callback){ //returns a url for the gif
+// returns a url for the gif
+function makeGif(word, callback){
 
   var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=dc6zaTOxFJmzC&limit=5");
   xhr.done(function(data) { console.log("success got data", data); });
@@ -26,7 +27,8 @@ function makeGif(word, callback){ //returns a url for the gif
 
 }
 
-function isGif(str){ //determines if a user input string is for a gif
+// determines if a user input string is for a gif
+function isGif(str){ 
 	str = str.toLowerCase();
 	var gif = "gif...";
 	var gifShort = "gif..";
@@ -47,7 +49,8 @@ function isGif(str){ //determines if a user input string is for a gif
 	}
 }
 
-function getGifWord(str){//turns a user input string into a word suitable for gif search
+// turns a user input string into a word suitable for gif search
+function getGifWord(str){
 	var strArray;
 	strArray = str.split("");
 

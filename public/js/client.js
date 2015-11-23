@@ -1,17 +1,69 @@
+// instantiates socket
 var socket = io();
 
-$('#guess-button').click(function(){
+// Guess button
+$('#guess-button').click( function() {
+
+	// emits Guess text
 	socket.emit('goonGuess', $('#input-guess').val());
 	$('#input-guess').val('');
 	return false;
 });
 
-$('#solve-button').click(function(){
+// Solve button
+$('#solve-button').click( function() {
+
+	// emits Solve text
 	socket.emit('goonSolve', $('#input-solve').val());
 	$('#input-solve').val('');
 	return false;
 });
 
+// sign in link
+$('#sign-in-link').click( function() {
+	showSignin();
+});
+
+// show sign in
+function showSignin(){
+	$('#sign-in-form').show();
+	$('#sign-up-form').hide();
+	$('#vid').hide();
+	// if($('#sign-in-link').html() == "sign up"){
+	// 	$('#sign-in-link').html("sign in");
+	// }
+	// else if($('#sign-in-link').html() == "sign in"){
+	// 	$('#sign-in-link').html("sign up");
+	// }
+}
+
+// sign up link
+$('#sign-up-link').click( function() {
+	showSignup();
+});
+
+// show sign up
+function showSignup() {
+	$('#sign-up-form').show();
+	$('#sign-in-form').hide();
+	$('#vid').hide();
+}
+
+$('#join-button').click( function() {
+	login();
+});
+
+$('#go-in-button').click( function() {
+	newUser();
+});
+
+// how-to link
+$('#how-to-link').click( function() {
+	var topOfHowTo = $('.howto').offset().top;
+	$('body, html').animate({ scrollTop:topOfHowTo });
+});
+
+// show Guess stuff
 function showGuessInput(){
 	$('#input-solve').hide();
 	$('#solve-button').hide();
@@ -21,6 +73,7 @@ function showGuessInput(){
 	$('#showSolve').show();
 }
 
+// show Solve stuff
 function showSolveInput(){
 	$('#input-solve').show();
 	$('#solve-button').show();
@@ -30,6 +83,7 @@ function showSolveInput(){
 	$('#showGuess').show();
 }
 
+// listener for Guess signal
 socket.on('goonGuess', function(msg){
 
 	if (isGif(msg)) {
@@ -85,6 +139,7 @@ socket.on('goonGuess', function(msg){
 	thumbsDownCount += 1;
 });
 
+// listener for Solve signal
 socket.on('goonSolve', function(msg){
 
 	$('#feed').append($(
@@ -116,52 +171,37 @@ socket.on('goonSolve', function(msg){
 	thumbsDownCount += 1;
 });
 
+// listener for Thumbs Up signal
 socket.on('topDawgThumbsUp', function(thumbsUpId){
 	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down-guess, .thumbs-down-solve').off();
 	$('#'+thumbsUpId).replaceWith($('<img class="thumbs-up-gold" src="/img/correct.png">'));
 });
 
+// listener for Thumbs Down signal
 socket.on('topDawgThumbsDown', function(thumbsDownId){
 	$('#'+thumbsDownId).closest('.vote-deck').children('.thumbs-up-guess, .thumbs-up-solve').off();
 	$('#'+thumbsDownId).replaceWith($('<img class="thumbs-down-gold" src="/img/wrong.png">'));
 });
 
+// listener for Solution Found signal
 socket.on('solutionFound', function(thumbsUpId){
 	$('#'+thumbsUpId).closest('.vote-deck').children('.thumbs-down-guess, .thumbs-down-solve').off();
 	$('#'+thumbsUpId).replaceWith($('<img class="thumbs-up-gold" src="/img/correct.png">'));
 	//winner('Ganesh');
 });
 
+// when a goon wins
 function winner(winnerName) {
 	$('#winner-pop-up').append(winnerName + ' has won!');
 	$('#winner-pop-up').show();
 }
 
-function toggleID(element){
-	$('#' + 'element').toggle();
-}
-
-function showSignin(){
-	$('#signin-form').show();
-	$('#signup-form').hide();
-	$('#vid').hide();
-	// if($('#login-link').html() == "sign up"){
-	// 	$('#login-link').html("sign in");
-	// }
-	// else if($('#login-link').html() == "sign in"){
-	// 	$('#login-link').html("sign up");
-	// }	
-}
-function showSignup(){
-	$('#signup-form').show();
-	$('#signin-form').hide();
-	$('#vid').hide();
-}
-
+// sign in button
 $('#sign-in').click( function(){
 	showSignin();
 });
 
+// play again button
 $('#play-again').click(function(){
 	window.location.replace('/game_start');
 });

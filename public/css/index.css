@@ -1,100 +1,150 @@
 /*HTML ELEMENTS*/
-body, html{
+body, html
+{
 	height: 100%;
 	background-color: black;
+
 	font-family: 'Lato', 'sans-serif';
-	color: white;
 	font-size: 10px;
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
+	color: white;
+
+	margin: 0;
+	padding: 0;
 }
-div{
+
+div
+{
 	margin: 2% 0 2% 0;
 }
-a{
+
+a
+{
 	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
 	font-size: 1.5rem;
 }
 
+section
+{
+	height: 100vh;
+}
+
+.button
+{
+	background-color: #E7BB41;
+	width: 18%;
+	
+	font-size: 80%;
+	font-size: 1.5rem;
+	color:white;
+
+	border: none;
+	margin: 0 auto;
+	padding: 10px;
+	overflow: hidden;
+}
+
+
 /*HEADER*/
-.header{
+.header
+{
 	width: 100%;
 	text-align: center;
 }
-.menu-links{
+
+.menu-links
+{
 	width: 50%;
+    margin: 0 auto;
 	text-align: center;
 	display: flex;
 	justify-content: space-between;
 }
-.menu-links a{
+
+.menu-links a
+{
 	font-size: 2rem;
 	color: #E7BB41;
 }
-.content{
+
+.content
+{
+	width: 100%;
 	text-align: center;
 }
-#truth{
+
+#truth
+{
 	color:red;
 }
 
-/*SIGNUP FORM*/
-.signup-form, .signin-form{
+.start-form
+{
 	font-size: 1.4rem;
-	margin-top: 4%;
-}
-#signup-form label, #signin-form label{
-	display: block;
-}
-#signup-form input, #signin-form input{
-	display: inline-block;
-	height: 2rem;
-	width: 20%;
-	margin: 2% 2% 2% 2%;
-}
-#signin-form{
+	/*margin-top: 4%;*/
+
 	display: none;
 }
-#signup-form{
-	display: none;
-}
+
+	.start-form label
+	{
+		display: block;
+	}
+
+	.start-form input
+	{
+		display: inline-block;
+		height: 2rem;
+		width: 20%;
+		margin: 2%;
+	}
+
 /*GAME FORM*/
-.game-form{
+.game-form
+{
 	font-size: 1.4rem;
 	margin-top: 4%;
 }
-#game-form label{
+
+#game-form label
+{
 	display: block;
 }
-#game-form input{
+
+#game-form input
+{
 	display: inline-block;
 	height: 2rem;
 	width: 20%;
 	margin: 2% 2% 2% 2%;
 }
-#game-wrap{
+
+#game-wrap
+{
 	text-align: center;
 	width: 100%;
 }
 
 /*LOGO*/
-.logo{
-	text-align: center;
+.logo
+{
+	width: 100%;
 	max-height: 10%;
 	margin-bottom: 2%;
 	font-family: 'Fredoka One';
-	font-size: 20rem;
+	font-size: 18rem;
 	color: white;
 }
-.logo img{
-	height: 20rem;
+.logo img
+{
+	height: 18rem;
 	width: auto;
 }
 
 /*TAGLINE*/
-.tagline{
+.tagline
+{
 	font-size: 5rem;
 	text-align: center;
 	letter-spacing: 0.4rem;
@@ -102,7 +152,8 @@ a{
 	width: 100%;
 }
 
-.tagline-2{
+.tagline-2
+{
 	font-size: 3rem;
 	text-align: center;
 	letter-spacing: 0.4rem;
@@ -110,32 +161,40 @@ a{
 }
 
 /*DOWNLOAD BUTTON*/
-.download-button{
+.download-button
+{
 	text-align: center;
 }
-.download-button img{
+.download-button img
+{
 	margin-top: 4%;
 	margin-bottom: 4%;
 	height: 6rem;
 }
 
 /*EMAIL SIGNUP*/
-#email-signup{
+#email-signup
+{
 	width: 50%;
 	text-align: center;
 	margin-bottom: 4%;
 }
-div.mc-field-group label{
+
+div.mc-field-group label
+{
 	display: block;
 	width: 100%;
 }
-div.mc-field-group input{
+
+div.mc-field-group input
+{
 	display: block;
 	margin-left: 2rem;
 }
 
 /*TEASER*/
-.teaser{
+.teaser
+{
 	height: auto;
 	background-color: white;
 	color: black;
@@ -147,55 +206,44 @@ div.mc-field-group input{
 	word-spacing: 0.5rem;
 
 }
-.teaser img{
+
+.teaser img
+{
 	height: 2.7rem;
 	float: right;
 }
-.teaser p{
-
-}
 
 /*SECTION*/
-.section-content{
+.section-content
+{
 	display: none;
 }
-.section{
+
+.section
+{
 	margin: 0;
-}
-
-/*ABOUT SECTION*/
-#about-section .teaser{
-
-}
-#about-content{
-
 }
 
 /*TEAM SECTION*/
-#team-section .teaser{
+#team-section .teaser
+{
 	background-color: #65ccd8;
 	color: white;
 }
-#team-content{
 
-}
-
-/*COMING SOON SECTION*/
-#comingsoon-section .teaser{
-
-}
-#comingsoon-content{
-
-}
-
-.footer{
+.footer
+{
 	margin: 0;
 }
-	#copyright{
+	.copyright
+	{
 		font-size: 1.5rem;
 		text-align: center;
 		color: #E7BB41;
 		text-decoration: none;
 	}
-button { width: 18%; background: #E7BB41; border: none; padding: 10px 10px 10px 10px; text-align: center; color:white; 
-	font-size: 80%; overflow: hidden; font-size: 1.5rem; margin: 0 2% 0 2%;}
+
+.pointer
+{
+	cursor: pointer;
+}
