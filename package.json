@@ -1,7 +1,7 @@
 {
-  "name": "socket-chat-example",
+  "name": "Trace!",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "Trace! your way to the truth",
   "dependencies": {
     "express": "^4.10.2",
     "path": "^0.12.7",
