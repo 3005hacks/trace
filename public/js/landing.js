@@ -29,27 +29,31 @@ function isTopDawg() {
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
           }
-        });
+    });
+}
+
+function getQuestion() {
 
     var query2 = new Parse.Query(Game);
     query2.descending("createdAt");
 
     query2.first({
-          success: function(result) {
+        success: function(result) {
 
             console.log("Successfully retrieved an object");
             $("#asker").html(result.get("topDawg") + " asked...");
             $("#question>.card-content").html(result.get("question"));
             $("#clue>.card-content").html(result.get("hint"));
-            },
-          error: function(error) {
+
+        }, error: function(error) {
 
             alert("Error: " + error.code + " " + error.message);
-          }
-        });
+        }
+    });
 }
 
 isTopDawg();
+getQuestion();
 
 
 
