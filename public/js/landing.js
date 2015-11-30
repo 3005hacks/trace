@@ -32,7 +32,7 @@ function isTopDawg() {
     });
 }
 
-function getQuestion() {
+function getMostRecentQuestion() {
 
     var query2 = new Parse.Query(Game);
     query2.descending("createdAt");
@@ -53,7 +53,7 @@ function getQuestion() {
 }
 
 isTopDawg();
-getQuestion();
+getMostRecentQuestion();
 
 
 

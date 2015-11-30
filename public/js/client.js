@@ -1,11 +1,18 @@
 // instantiates socket
 var socket = io();
+var currentUser = Parse.User.current();
 
 // Guess button
 $('#guess-button').click( function() {
 
 	// emits Guess text
-	socket.emit('goonGuess', $('#input-guess').val());
+	var goonGuess = {
+
+		guessed: $('#input-guess').val(),
+		username: currentUser.getUsername()
+	};
+
+	socket.emit('goonGuess', goonGuess);
 	$('#input-guess').val('');
 	return false;
 });
@@ -111,8 +118,8 @@ socket.on('goonGuess', function(msg){
 		$('#feed').append($(
 			'\
 			<div class = "card">\
-				<div class = "lead-text">A new clue has arrived...</div>\
-				<div class="card-content">' + cardContent + '</div>\
+				<div class = "lead-text">'+cardContent+' guessed...</div>\
+				<div class="card-content">' + cardContent.guessed + '</div>\
 				<div class="vote-deck">\
 					<img id="thumbs-up-' + thumbsUpCount + '" class="thumbs-up-guess" src="/img/thumb.png"> <img id="thumbs-down-' + thumbsDownCount + '" class="thumbs-down-guess" src="/img/thumbdown.png">\
 				</div>\
