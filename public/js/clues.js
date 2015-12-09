@@ -29,7 +29,7 @@ function makeGif(word, callback){
 
 // determines if a user input string is for a gif
 function isGif(str){ 
-	str = str.toLowerCase();
+	str = str.toString().toLowerCase();
 	var gif = "gif...";
 	var gifShort = "gif..";
 	var gifLong = "gif....";
