@@ -3,11 +3,10 @@ var socket = io();
 
 var currentUser = Parse.User.current();
 
-// Guess button
-$('#guess-button').click( function() {
+// Sends the guess
+var guessSubmit = function() {
 
 	var usr_guess = $('#input-guess').val();
-	// emits Guess text
 	var goonGuess = {
 
 		guessed: usr_guess,
@@ -26,7 +25,9 @@ $('#guess-button').click( function() {
 
 		      	text: url,
 		      	username: currentUser.getUsername(),
-		      	isGif: true
+		      	isGif: true,
+		      	game: gameObject,
+		      	isGuess: true
 		    	}, {
 		      	success: function(game) {
 
@@ -34,9 +35,13 @@ $('#guess-button').click( function() {
 		        	console.log('Guess saved');
 		        	goonGuess.guessed = url;
 		        	goonGuess.isGif = true;
+		        	goonGuess.id = game.id;
 		        	console.log(goonGuess);
 					socket.emit('goonGuess', goonGuess);
 					$('#input-guess').val('');
+					var relation = gameObject.relation("guesses");
+					relation.add(game);
+					gameObject.save();
 					return false;
 
 		      	}, error: function(gameScore, error) {
@@ -55,7 +60,9 @@ $('#guess-button').click( function() {
 		guess.save({
 	      	text: goonGuess.guessed,
 	      	username: currentUser.getUsername(),
-	      	isGif: false
+	      	isGif: false,
+	      	game: gameObject,
+	      	isGuess: true
 	    }, {
 	      	success: function(game) {
 
@@ -64,6 +71,9 @@ $('#guess-button').click( function() {
 	        	goonGuess.id = game.id;
 	        	socket.emit('goonGuess', goonGuess);
 				$('#input-guess').val('');
+				var relation = gameObject.relation("guesses");
+				relation.add(game);
+				gameObject.save();
 				return false;    
 		    },
 	      	error: function(gameScore, error) {
@@ -72,12 +82,16 @@ $('#guess-button').click( function() {
 	      	}
 	    });
 	}
+}
+
+// Guess button
+$('#guess-button').click( function() {
+	guessSubmit();
 });
 
-// Solve button
-$('#solve-button').click( function() {
+// Sends submit message
+var solveSubmit = function(){
 
-	// emits Guess text
 	var goonSolve = {
 
 		solveText: $('#input-solve').val(),
@@ -89,7 +103,9 @@ $('#solve-button').click( function() {
 
 	solve.save({
       text: goonSolve.solveText,
-      username: currentUser.getUsername()
+      username: currentUser.getUsername(),
+      game: gameObject,
+      isGuess: false
     }, {
       success: function(game) {
 
@@ -99,6 +115,9 @@ $('#solve-button').click( function() {
         // emits Solve text
 		socket.emit('goonSolve', goonSolve);
 		$('#input-solve').val('');
+		var relation = gameObject.relation("solves");
+		relation.add(game);
+		gameObject.save();
 		return false;
         
       },
@@ -106,7 +125,11 @@ $('#solve-button').click( function() {
       
         // error handling goes here
       }
-    });
+	});
+}
+
+$('#solve-button').click(function() {
+	solveSubmit();
 });
 
 // sign in link
@@ -141,7 +164,7 @@ $('#go-in-button').click( function() {
 	newUser();
 });
 
-// show Guess stuff
+// show Guess box
 function showGuessInput(){
 	$('#input-solve').hide();
 	$('#solve-button').hide();
@@ -152,7 +175,7 @@ function showGuessInput(){
 	$('#back-button').show();
 }
 
-// show Solve stuff
+// show Solve box
 function showSolveInput(){
 	$('#input-solve').show();
 	$('#solve-button').show();
@@ -163,7 +186,7 @@ function showSolveInput(){
 	$('#back-button').show();
 }
 
-// change back to original guess menu
+// Change back to original guess menu
 function changeGuessOption(){
 	$('#input-solve').hide();
 	$('#solve-button').hide();
@@ -276,4 +299,18 @@ $('#sign-in').click( function(){
 // play again button
 $('#play-again').click(function(){
 	window.location.replace('/game_start');
+});
+
+$(document).ready(function(){
+    $("#input-guess").keyup(function(e){
+        if (e.which === 13){
+            guessSubmit();
+        }
+    })
+
+    $("#input-solve").keyup(function(e){
+        if (e.which === 13){
+            solveSubmit();
+        }
+    })
 });

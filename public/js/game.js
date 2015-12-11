@@ -103,14 +103,6 @@ function showJoinGame(){
 	$('#join-game-form').show();
 }
 
-$('#create-button').click( function(){
-    createGame();
-});
-
-$('#join-button').click( function(){
-    joinGame();
-});
-
 $(document).ready(function(){
     $("#new-pass").keyup(function(e){
         if (e.which === 13){
@@ -123,5 +115,4 @@ $(document).ready(function(){
             joinGame();
         }
     })
-
 });

@@ -111,7 +111,7 @@ $(document).ready(function(){
         }
     })
 
-    $("#new_password").keyup(function(e){
+    $("#new-email").keyup(function(e){
         if (e.which === 13){
             newUser();
         }
