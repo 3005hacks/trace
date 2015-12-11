@@ -2,10 +2,11 @@
 // 	$('#' + 'element').toggle();
 // }
 var topDawg;
+var currentUser = Parse.User.current();
+
 
 function isTopDawg() {
 
-    var currentUser = Parse.User.current();
     var Game = Parse.Object.extend("Games");
     var query = new Parse.Query(Game);
     query.equalTo("topDawg", currentUser.getUsername());
@@ -34,10 +35,11 @@ function isTopDawg() {
 
 function getMostRecentQuestion() {
 
-    var query2 = new Parse.Query(Game);
-    query2.descending("createdAt");
+    var Game = Parse.Object.extend("Games");
+    var query = new Parse.Query(Game);
+    query.descending("createdAt");
 
-    query2.first({
+    query.first({
         success: function(result) {
 
             console.log("Successfully retrieved an object");
@@ -50,6 +52,14 @@ function getMostRecentQuestion() {
             alert("Error: " + error.code + " " + error.message);
         }
     });
+}
+
+function getPostGuessesAndHints() {
+
+    var Guess = Parse.Object.extend("Guesses");
+    var Hint = Parse.Object.extend("Hints");
+
+
 }
 
 isTopDawg();

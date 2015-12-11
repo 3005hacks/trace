@@ -11,10 +11,10 @@ var currentUser = Parse.User.current();
 function createGame() {
 
     // Retrieves user information from the form
-    var gamename_usr = encodeHTML(document.getElementById("new-gamename").value);
-    var question_usr = encodeHTML(document.getElementById("new-question").value);
-    var hint_usr = encodeHTML(document.getElementById("new-hint").value);
-    var pass_usr = encodeHTML(document.getElementById("new-pass").value);
+    var gamename_usr = encodeHTML($("#new-gamename").val());
+    var question_usr = encodeHTML($("#new-question").val());
+    var hint_usr = encodeHTML($("#new-hint").val());
+    var pass_usr = encodeHTML($("#new-pass").val());
 
     // Opening the game class from Parse
     var Game = Parse.Object.extend("Games");
@@ -45,11 +45,11 @@ function createGame() {
     });
 }
 
-// Joins a game already in
+// Joins a game already in progress
 function joinGame() {
 
     // Retrieves user passcode from form
-    var pass_given = encodeHTML(document.getElementById("game-pass").value);
+    var pass_given = encodeHTML($("#game-pass").val());
 
     // Games class from Parse
     var Game = Parse.Object.extend("Games");

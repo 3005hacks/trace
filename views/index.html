@@ -5,7 +5,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/css/index.css">
-  <link rel="stylesheet" type="text/css" href="/css/howto.css">
 
   <!-- FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
@@ -30,7 +29,7 @@
 
       <div class = "header">
         <div class = "menu-links">
-          <a id="how-to-link">how to play</a>
+          <a href='howto' id="how-to-link">how to play</a>
           <a id="sign-in-link">sign in</a>
           <a id="sign-up-link">sign up</a>
         </div>
@@ -56,7 +55,7 @@
           <label for="email">Email</label>
           <input type="text" name="email" id="new-email" class="input">
 
-          <div id="go-in-button" class="pointer button">Go In!</div>
+          <div id="go-in-button" class="pointer button">Sign Up!</div>
         </div>
 
         <div id="sign-in-form" class="start-form">
@@ -67,55 +66,15 @@
           <label for="password">Password</label>
           <input type="password" name="password" id="password" class="input" minlength="6" maxlength="12">
           
-          <div id="join-button" class="pointer button">Join</div>
+          <div id="join-button" class="pointer button">Go In!</div>
         </div>  
        
       </div>         
 
       <div class = "footer">
-        <div class="copyright">3005Hacks &copy; 2015</div>
+        <div class="copyright"><a href="http://3005hacks.com">3005Hacks</a> &copy; 2015</div>
       </div>
     </div>    
-  </section>
-
-  <section class="howto">
-    <div class = "wrapper">
-
-      <div class = "content">
-
-        <a class = "logo-howto" href="/">trace</a>
-
-        <div class = "tagline">trace your way to the truth!</div>
-        <div class = "tagline-2">here's how to play:</div>
-
-        <div class = "howto-slide" id = "howtoslide1">
-        <button class = "next" onclick = "slide2()">next</button>
-        <div class = "howto-text">Ponder the answers to your friends' epic questions...</div>
-        <div><img src="/img/trace1.png"></div>
-        </div>
-
-        <div class = "howto-slide" id = "howtoslide2">
-        <button class = "next" onclick = "slide3()">next</button> 
-        <div class = "howto-text">Drop clues to help each other out...</div>
-        <div><img src="/img/trace4.png"></div>     
-        </div>
-
-        <div class = "howto-slide" id = "howtoslide3">
-        <button class = "next" onclick = "slide4()">next</button>
-        <div class = "howto-text">Trace your way to the truth...</div>
-        <div><img src="/img/trace2.png"></div>
-        </div>
-
-        <div class = "howto-slide" id = "howtoslide4">
-        <button class = "next" onclick = "window.open('game_start', '_self')">play now</button> 
-        <div class = "howto-text">Until it's your turn to take control! </div>
-        <div><img src="/img/trace3.png"></div>
-        </div>
-
-      </div>         
-
-<!--       <div class="howto-text" style="color: #393E41">Hint: type gif... before a guess to add some flavor to your game!</div> -->
-    </div>
   </section>
 
   <!-- JS -->

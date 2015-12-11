@@ -5,14 +5,15 @@
     
 
 */
-    //signs up a new user
+
+//signs up a new user
     function newUser() {
 
         var user = new Parse.User();
-        var username = encodeHTML(document.getElementById("new-username").value);
-        var password = encodeHTML(document.getElementById('new-password').value);
-        var confirm_password = encodeHTML(document.getElementById("confirm-password").value);
-        var email = encodeHTML(document.getElementById('new-email').value);
+        var username = encodeHTML($('#new-username').val());
+        var password = encodeHTML($('#new-password').val());
+        var confirm_password = encodeHTML($('#confirm-password').val());
+        var email = encodeHTML($('#new-email').val());
 
         // error - catches space in username
         if(username.split(" ").length > 1){
@@ -57,7 +58,7 @@
     // Logs in a new Parse user 
     function login(){
       
-      Parse.User.logIn(encodeHTML(document.getElementById('username').value), encodeHTML(document.getElementById('password').value), {
+      Parse.User.logIn(encodeHTML($('#username').val()), encodeHTML($('#password').val()), {
       success: function(user) {
 
             // Open next window
