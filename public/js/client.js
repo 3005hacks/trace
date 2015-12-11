@@ -149,6 +149,7 @@ function showGuessInput(){
 	$('#guess-button').show();
 	$('#showGuess').hide();
 	$('#showSolve').hide();
+	$('#back-button').show();
 }
 
 // show Solve stuff
@@ -159,6 +160,18 @@ function showSolveInput(){
 	$('#guess-button').hide();
 	$('#showSolve').hide();
 	$('#showGuess').hide();
+	$('#back-button').show();
+}
+
+// change back to original guess menu
+function changeGuessOption(){
+	$('#input-solve').hide();
+	$('#solve-button').hide();
+	$('#input-guess').hide();
+	$('#guess-button').hide();
+	$('#showSolve').show();
+	$('#showGuess').show();
+	$('#back-button').hide();
 }
 
 // listener for Guess signal

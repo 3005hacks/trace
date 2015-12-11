@@ -130,30 +130,36 @@ input {
 	height: 4.0rem;
 	margin: 0 30% 0 30%;
 }
-#input-guess{
-	display:none;
-	height: 2.0rem;
-}
-#input-solve{
-	display:none;
-	height: 2.0rem;
-}
-#guess-button{
-	display: none;
-	background: #393E41;
-	width:10%;
-}
-#solve-button{
-	display: none;
-	background: #393E41;
-	width:10%;
-}
-#showSolve{
-	background-color: #DD4646;
-}
 #guess-form{
 
 }
+	#input-guess{
+		display:none;
+		height: 2.0rem;
+	}
+	#input-solve{
+		display:none;
+		height: 2.0rem;
+	}
+	#guess-button{
+		display: none;
+		background: #393E41;
+		width:10%;
+	}
+	#solve-button{
+		display: none;
+		background: #393E41;
+		width:10%;
+	}
+	#showSolve{
+		background-color: #DD4646;
+	}
+	#back-button{
+		display: none;
+		margin-top: 1rem;
+		height: 3rem;
+		padding-right: 3rem;
+	}
 #winner-pop-up {
 	display: none;
 	text-align: center;
@@ -161,7 +167,7 @@ input {
 	height: 10%;
 	background-color: #DD4646 ;
 	opacity: 0.95;
-	position: fixed;
+	position: fixed
 	left: 42.5%;
 	top: 50%
 }
