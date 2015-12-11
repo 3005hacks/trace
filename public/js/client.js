@@ -141,12 +141,6 @@ $('#go-in-button').click( function() {
 	newUser();
 });
 
-// how-to link
-$('#how-to-link').click( function() {
-	var topOfHowTo = $('.howto').offset().top;
-	$('body, html').animate({ scrollTop:topOfHowTo });
-});
-
 // show Guess stuff
 function showGuessInput(){
 	$('#input-solve').hide();

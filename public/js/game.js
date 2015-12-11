@@ -103,9 +103,25 @@ function showJoinGame(){
 	$('#join-game-form').show();
 }
 
-socket.on('goToLandingPage', function(data){
-  console.log(data);
-  var w = window.open('landing', "_self");
-  w.opener.$('#asker').css('background-color', 'green');
+$('#create-button').click( function(){
+    createGame();
+});
+
+$('#join-button').click( function(){
+    joinGame();
+});
+
+$(document).ready(function(){
+    $("#new-pass").keyup(function(e){
+        if (e.which === 13){
+            createGame();
+        }
+    })
+
+    $("#game-pass").keyup(function(e){
+        if (e.which === 13){
+            joinGame();
+        }
+    })
 
 });
