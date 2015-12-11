@@ -154,7 +154,7 @@ function showGuessInput(){
 	$('#input-guess').show();
 	$('#guess-button').show();
 	$('#showGuess').hide();
-	$('#showSolve').show();
+	$('#showSolve').hide();
 }
 
 // show Solve stuff
@@ -164,7 +164,7 @@ function showSolveInput(){
 	$('#input-guess').hide();
 	$('#guess-button').hide();
 	$('#showSolve').hide();
-	$('#showGuess').show();
+	$('#showGuess').hide();
 }
 
 // listener for Guess signal
@@ -257,6 +257,7 @@ socket.on('solutionFound', function(thumbsUpId){
 // when a goon wins
 function winner(winnerName) {
 	$('#winner-pop-up').append(winnerName + ' has won!');
+	$('#feed').hide();
 	$('#winner-pop-up').show();
 }
 
