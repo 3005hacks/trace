@@ -80,7 +80,7 @@
         Parse.User.logOut();
         window.open('/', "_self");
     }
-
+/*
     // Facebook logging in
     function logMeIn(){
         
@@ -103,6 +103,7 @@
         logMeIn();
         window.open('game_start', "_self");
     }
+*/
 
 $(document).ready(function(){
     $("#password").keyup(function(e){
