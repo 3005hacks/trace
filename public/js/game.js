@@ -31,7 +31,8 @@ function createGame() {
       success: function(game) {
 
         // If object is stored correctly
-        currentUser.add("currentTopDawg", game.id);
+        var relation = currentUser.relation("currentOwner");
+        relation.add(game);
         currentUser.save();
         window.open('landing', "_self");
         // socket.emit('goToLandingPage', gamename_usr);
@@ -60,10 +61,10 @@ function joinGame() {
 
     // Retrieve first object with given pass word
     query.first({
-      success: function(result) {
+      success: function(game) {
 
         // If there are no results, alert the user
-        if (result === undefined) {
+        if (game === undefined) {
 
           alert("Not a valid Game Code!");
         }
@@ -71,7 +72,8 @@ function joinGame() {
         // If there is a match, open the game page
         else {
 
-          currentUser.add("currentPlayer", result.id);
+          var relation = currentUser.relation("currentParticipant");
+          relation.add(game);
           currentUser.save();
           window.open('landing', "_self");
         }

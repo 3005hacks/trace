@@ -103,7 +103,7 @@ var solveSubmit = function(){
 
 	solve.save({
       text: goonSolve.solveText,
-      username: currentUser.getUsername(),
+      user: currentUser,
       game: gameObject,
       isGuess: false
     }, {
