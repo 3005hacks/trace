@@ -1,0 +1,103 @@
+/*HTML ELEMENTS*/
+body, html
+{
+	height: 100%;
+	background-color: black;
+
+	font-family: 'Lato', 'sans-serif';
+	font-size: 10px;
+	color: white;
+
+	margin: 0;
+	padding: 0;
+
+	text-align: center;
+}
+
+section
+{
+	height: 100vh;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.menu-bar{
+	min-height: 20%;
+	font-size: 10rem;
+	border-top: 0.1rem solid white;
+	border-width: 10%;
+	width: 50%;
+	margin: 0 auto 0 auto;
+	cursor: pointer;
+	font-family: 'Poiret One', cursive;
+}
+	.menu-bar:hover{
+		font-size: 11rem;
+		width: 58%;
+	}
+	.menu-bar p{
+		font-size: inherit;
+	}
+/*GAME FORM*/
+.game-form
+{
+	font-size: 1.4rem;
+	margin: 4% 0 4% 0;
+	display: none;
+}
+
+.game-form label
+{
+	display: block;
+}
+
+.game-form input
+{
+	display: inline-block;
+	height: 2rem;
+	width: 20%;
+	margin: 2% 2% 2% 2%;
+}
+.button
+{
+	background-color: #DD4646;
+	width: 18%;
+	
+	font-size: 1.8rem;
+	color:white;
+
+	border: none;
+	margin: 0 auto;
+	padding: 10px;
+	overflow: hidden;
+}
+.game-wrap
+{
+	text-align: center;
+	width: 100%;
+}
+#vid{
+	margin: 4% 0 4% 0;
+}
+#team-logo{
+	height: 15rem;
+	width: auto;
+	border-radius: 50%;
+	margin-top: 4%;
+}
+
+.logo{
+	height: 25%;
+	width: 100%;
+	margin-bottom: 4%;
+	font-family: 'Fredoka One';
+	font-size: 18rem;
+	color: white;
+}
+.footer{
+	height: 10%;
+	position: absolute;
+	top: 90%;
+}

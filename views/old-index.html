@@ -5,12 +5,11 @@
   <title>Trace!</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="/css/new.css">
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
 
   <!-- FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500|Nunito|Lato:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -30,60 +29,20 @@
     <div class = "wrapper">
 
       <div class = "header">
-
+        <div class = "menu-links">
+          <a href='howto' id="how-to-link">how to play</a>
+          <a id="sign-in-link">sign in</a>
+          <a id="sign-up-link">sign up</a>
+        </div>
       </div>
 
       <div class = "content">
 
-      <section>
-        <div class = "logo">trace!</div>
+        <div class = "logo">trace</div>
 
-        <div class = "menu-bar" onclick="showSignup()">
-          sign up
-          <div id="sign-up-form" class="game-form">
+        <iframe id = "vid" width="560" height="315" src="https://www.youtube.com/embed/mO77BdDwu0Q" frameborder="0" allowfullscreen></iframe>
 
-          <label for="username">Username</label>
-          <input type="text" name="username" id="new-username" class="input">
-          
-          <label for="password">Password</label>
-          <input type="password" name="password" id="new-password" class="input" minlength="6" maxlength="12">
-          
-          <label for="passconf">Confirm Password</label>
-          <input type="password" name="passconf" id="confirm-password" class="input">
-          
-          <label for="email">Email</label>
-          <input type="text" name="email" id="new-email" class="input">
-
-          <div id="go-in-button" class="pointer button">Sign Up!</div>
-
-        </div>
-        </div>
-        <div class = "menu-bar" onclick="showSignin()">
-          sign in
-          <div id="sign-in-form" class="game-form">
-            
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="input">
-            
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="input" minlength="6" maxlength="12">
-            
-            <div id="join-button" class="pointer button">Go In!</div>
-          </div>   
-                   
-        </div>
-        <a href="howto"><div class = "menu-bar">
-          how to play
-        </div></a>
-        <div class = "menu-bar">
-                  <iframe id = "vid" width="560" height="315" src="https://www.youtube.com/embed/mO77BdDwu0Q" frameborder="0" allowfullscreen></iframe>
-        </div>   
-
-        <div class = "menu-bar">
-             <a href="http://3005hacks.com"> <img id="team-logo" src="/img/3005-logo.jpg"></a>
-        </div>       
-
-        <!-- <div id="sign-up-form" class="start-form">
+        <div id="sign-up-form" class="start-form">
 
           <label for="username">Username</label>
           <input type="text" name="username" id="new-username" class="input">
@@ -109,13 +68,13 @@
           <input type="password" name="password" id="password" class="input" minlength="6" maxlength="12">
           
           <div id="join-button" class="pointer button">Go In!</div>
-        </div> 
- -->
-      </section>
-
+        </div>  
+       
       </div>         
 
-
+      <div class = "footer">
+        <div class="copyright"><a href="http://3005hacks.com">3005Hacks</a> &copy; 2015</div>
+      </div>
     </div>    
   </section>
 
