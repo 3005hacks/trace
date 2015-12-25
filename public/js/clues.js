@@ -60,3 +60,40 @@ function getGifWord(str){
 
 	return strArray.join("");
 }
+
+// determines if a user input string is for a song
+function isSong(str){ 
+	str = str.toString().toLowerCase();
+	var song = "song...";
+	var songShort = "song..";
+	var songLong = "song....";
+
+	if(str.indexOf(song.toLowerCase()) == 0){
+		return true;
+	}
+	if(str.indexOf(songShort.toLowerCase()) == 0){
+		return true;
+	}
+	if(str.indexOf(songLong.toLowerCase()) == 0){
+		return true;
+	}
+
+	else{
+		return false;
+	}
+}
+
+// turns a user input string into a word suitable for a song widget
+function getSongWord(str){
+	var strArray;
+	strArray = str.split("");
+
+	strArray.splice(0,7);
+
+	return strArray.join("");
+}
+
+function makeSongWidget(str){
+	var song = "https://embed.spotify.com/?uri=" + str;
+	$("#spotify").attr("src", song); 
+}
