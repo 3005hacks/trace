@@ -139,7 +139,7 @@ $('#sign-in-link').click( function() {
 
 // show sign in
 function showSignin(){
-	$('#sign-in-form').show();
+	$('#sign-in-form').slideDown();
 	$('#sign-up-form').hide();
 	$('#vid').hide();
 }
@@ -151,7 +151,7 @@ $('#sign-up-link').click( function() {
 
 // show sign up
 function showSignup() {
-	$('#sign-up-form').show();
+	$('#sign-up-form').slideDown();
 	$('#sign-in-form').hide();
 	$('#vid').hide();
 }
