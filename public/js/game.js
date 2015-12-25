@@ -1,4 +1,4 @@
-/*
+s/*
     These functions deal with setting up, joining, and creating games   
 */
 
@@ -95,14 +95,18 @@ function encodeHTML(s) {
 
 // JQuery function to switch between forms
 function showNewGame(){
-	$('#game-form').show();
 	$('#join-game-form').hide();
+  $('#game-form').show();
+  $("body").animate({scrollTop: $("#newgame-bar").position().top}, "slow");
+  $('#new-gamename').focus();
 }
 
 // JQuery function to switch between forms
 function showJoinGame(){
 	$('#game-form').hide();
 	$('#join-game-form').show();
+  $("body").animate({scrollTop: $("#joingame-bar").position().top}, "slow");
+  $('#game-pass').focus();
 }
 
 $(document).ready(function(){
