@@ -35,7 +35,7 @@ a{
 }
 	.menu-bar:hover{
 		font-size: 11rem;
-		width: 50%;
+		min-height: 22%;
 	}
 	.menu-bar p{
 		font-size: inherit;
