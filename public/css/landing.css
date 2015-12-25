@@ -39,13 +39,12 @@ a{
 	text-align: center;
 }
 .menu-links{
-	width: 80%;
-	display: flex;
-	justify-content: space-between;
+	width: 100%;
+	text-align: center;
 }
 .menu-links a{
 	font-size: 2rem;
-	color: #E7BB41;
+	color: #DD4646;
 }
 
 /*LOGO*/
@@ -54,7 +53,11 @@ a{
 	margin-bottom: 4%;
 	font-family: 'Fredoka One';
 	font-size: 10rem;
+	cursor: pointer;
 }
+	.logo:hover{
+		color: #DD4646;
+	}
 
 /*GAME STYLING*/
 .card{

@@ -69,6 +69,7 @@ a{
 	background-color: #DD4646;
 	width: 18%;
 	cursor: pointer;
+	display: block;
 	
 	font-size: 1.8rem;
 	color:white;
@@ -107,7 +108,11 @@ a{
 	font-family: 'Fredoka One', arial;
 	font-size: 18rem;
 	color: white;
+	cursor: pointer;
 }
+	.logo:hover{
+		color: #DD4646;
+	}
 .footer{
 	height: 10%;
 	position: absolute;
