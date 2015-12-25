@@ -5,7 +5,9 @@
   <title>Trace!</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="/css/new.css">
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/css/howto.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
   <!-- FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
@@ -14,6 +16,7 @@
 
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
   <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
 
@@ -38,7 +41,36 @@
       <section>
         <div class = "logo">trace!</div>
 
-        <div class = "menu-bar" onclick="showSignup()">
+        <div id = "howto-bar" class = "menu-bar" onclick="showRules()">
+          rules
+          <div id="howto">
+            <div class = "howto-slide" id = "howtoslide1">
+            <button class = "button" onclick = "slide2()">next</button>
+            <div class = "howto-text">Ponder the answers to your friends' epic questions...</div>
+            <div><img src="/img/trace1.png"></div>
+            </div>
+
+            <div class = "howto-slide" id = "howtoslide2">
+            <button class = "button" onclick = "slide3()">next</button> 
+            <div class = "howto-text">Drop clues to help each other out...</div>
+            <div><img src="/img/trace4.png"></div>     
+            </div>
+
+            <div class = "howto-slide" id = "howtoslide3">
+            <button class = "button" onclick = "slide4()">next</button>
+            <div class = "howto-text">Trace your way to the truth...</div>
+            <div><img src="/img/trace2.png"></div>
+            </div>
+
+            <div class = "howto-slide" id = "howtoslide4">
+            <button class = "button" onclick="playNow()">play now</button>
+            <div class = "howto-text">Until it's your turn to take control! </div>
+            <div><img src="/img/trace3.png"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id = "signup-bar" class = "menu-bar" onclick="showSignup()">
           sign up
           <div id="sign-up-form" class="game-form">
 
@@ -58,7 +90,7 @@
 
         </div>
         </div>
-        <div class = "menu-bar" onclick="showSignin()">
+        <div id = "signin-bar" class = "menu-bar" onclick="showSignin()">
           sign in
           <div id="sign-in-form" class="game-form">
             
@@ -72,9 +104,8 @@
           </div>   
                    
         </div>
-        <a href="howto"><div class = "menu-bar">
-          how to play
-        </div></a>
+
+
         <div class = "menu-bar">
                   <iframe id = "vid" height="315" src="https://www.youtube.com/embed/mO77BdDwu0Q" frameborder="0" allowfullscreen></iframe>
         </div>   

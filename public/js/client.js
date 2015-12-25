@@ -141,6 +141,7 @@ $('#sign-in-link').click( function() {
 function showSignin(){
 	$('#sign-in-form').slideDown();
 	$('#sign-up-form').hide();
+	$("body").animate({scrollTop: $("#signin-bar").position().top}, "slow");
 }
 
 // sign up link
@@ -152,6 +153,7 @@ $('#sign-up-link').click( function() {
 function showSignup() {
 	$('#sign-up-form').slideDown();
 	$('#sign-in-form').hide();
+	$("body").animate({scrollTop: $("#signup-bar").position().top}, "slow");
 }
 
 $('#join-button').click( function() {
