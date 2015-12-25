@@ -2,6 +2,45 @@
 var socket = io();
 
 var currentUser = Parse.User.current();
+-----------------------------------------
+/*SIGN IN ... SIGN UP*/
+
+// sign in link
+$('#sign-in-link').click( function() {
+	showSignin();
+});
+
+// show sign in
+function showSignin(){
+	$('#sign-in-form').slideDown();
+	$('#sign-up-form').hide();
+	$('#username').focus();
+	$("body").animate({scrollTop: $("#signin-bar").position().top}, "slow");
+}
+
+// sign up link
+$('#sign-up-link').click( function() {
+	showSignup();
+});
+
+// show sign up
+function showSignup() {
+	$('#sign-up-form').slideDown();
+	$('#sign-in-form').hide();
+	$('#new-username').focus();
+	$("body").animate({scrollTop: $("#signup-bar").position().top}, "slow");
+}
+
+$('#join-button').click( function() {
+	login();
+});
+
+$('#go-in-button').click( function() {
+	newUser();
+});
+-------------------------------------------
+-------------------------------------------
+/*GUESS AND SOLVE*/
 
 // Sends the guess
 var guessSubmit = function() {
@@ -130,38 +169,6 @@ var solveSubmit = function(){
 
 $('#solve-button').click(function() {
 	solveSubmit();
-});
-
-// sign in link
-$('#sign-in-link').click( function() {
-	showSignin();
-});
-
-// show sign in
-function showSignin(){
-	$('#sign-in-form').slideDown();
-	$('#sign-up-form').hide();
-	$("body").animate({scrollTop: $("#signin-bar").position().top}, "slow");
-}
-
-// sign up link
-$('#sign-up-link').click( function() {
-	showSignup();
-});
-
-// show sign up
-function showSignup() {
-	$('#sign-up-form').slideDown();
-	$('#sign-in-form').hide();
-	$("body").animate({scrollTop: $("#signup-bar").position().top}, "slow");
-}
-
-$('#join-button').click( function() {
-	login();
-});
-
-$('#go-in-button').click( function() {
-	newUser();
 });
 
 // show Guess box

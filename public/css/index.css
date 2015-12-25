@@ -45,20 +45,24 @@ a{
 {
 	font-size: 1.4rem;
 	margin: 4% 0 4% 0;
+}
+	.game-form label
+	{
+		display: block;
+	}
+
+	.game-form input
+	{
+		display: inline-block;
+		height: 2rem;
+		width: 20%;
+		margin: 2% 2% 2% 2%;
+	}
+#sign-in-form{
 	display: none;
 }
-
-.game-form label
-{
-	display: block;
-}
-
-.game-form input
-{
-	display: inline-block;
-	height: 2rem;
-	width: 20%;
-	margin: 2% 2% 2% 2%;
+#sign-up-form{
+	display: none;
 }
 .button
 {

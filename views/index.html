@@ -41,8 +41,8 @@
       <section>
         <div class = "logo">trace!</div>
 
-        <div id = "howto-bar" class = "menu-bar" onclick="showRules()">
-          rules
+        <div id = "howto-bar" class = "menu-bar">
+          <div onclick="showRules()">rules</div>
           <div id="howto">
             <div class = "howto-slide" id = "howtoslide1">
             <button class = "button" onclick = "slide2()">next</button>
@@ -68,10 +68,11 @@
             <div><img src="/img/trace3.png"></div>
             </div>
           </div>
+
         </div>
 
-        <div id = "signup-bar" class = "menu-bar" onclick="showSignup()">
-          sign up
+        <div id = "signup-bar" class = "menu-bar">
+          <div onclick="showSignup()">sign up</div> 
           <div id="sign-up-form" class="game-form">
 
           <label for="username">Username</label>
@@ -88,10 +89,11 @@
 
           <div id="go-in-button" class="pointer button">Sign Up!</div>
 
+          </div>
+
         </div>
-        </div>
-        <div id = "signin-bar" class = "menu-bar" onclick="showSignin()">
-          sign in
+        <div id = "signin-bar" class = "menu-bar">
+          <div onclick="showSignin()">sign in</div> 
           <div id="sign-in-form" class="game-form">
             
             <label for="username">Username</label>

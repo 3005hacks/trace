@@ -4,12 +4,13 @@
 
 <head>
 
-  <link rel="stylesheet" type="text/css" href="/css/index.css">
   <link rel="stylesheet" type="text/css" href="/css/game_start.css">
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
 
   <!-- FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500|Nunito|Lato:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -29,26 +30,21 @@
 
 <body>
 
+
   <div class = "wrapper">
     <div class = "header">
-      <center><div class = "menu-links">
-      <a href="howto">how to play</a>
-      <a href="/" id="sign-in-link" onclick="logout()">sign out</a>
-      </div></center>     
+
     </div>
 
     <div class = "content">
+    <section class="landing">
 
-      <a class = "logo" href="/">trace</a>
-
-      <div class = "tagline">trace your way to the truth!</div>
-      <div class = "tagline-2">choose an option to start a game</div>
-
-      <div id = "start-buttons">
-        <button onclick="showJoinGame()">Join Game</button>
-        <button onclick="showNewGame()">Create Game</button>
+      <div class = "menu-bar">
+        <a class = "logo" href="/">trace</a>
+        <p id= "tag">choose an option to play:</p>
       </div>
-          <div id="game-wrap">
+
+      <div class = "menu-bar" onclick="showNewGame()">create
             <div id="game-form">
               <form class="game-form">
                 <label for="gamename">Game Title</label>
@@ -62,32 +58,37 @@
                 <!-- <label for="email">Access Code</label>
                 <input type="text" name="access" id="access-code" class="input"> -->
               </form>
-              <span>
-                <button id="create-button" class="small_button" onclick="createGame()">
-                  Go In!
-                </button>
-              </span>
+              <button id="create-button" class="button" onclick="createGame()">
+                go in!
+              </button>
             </div>
+      </div>
 
+      <div class = "menu-bar" onclick = "showJoinGame()">join
             <div id="join-game-form">
               <form class="game-form">
                 <label for="gamepass">Game Code</label>
                 <input type="text" name="gamepass" id="game-pass" class="input">
               </form>
               <span>
-                <button id="join-button" class="small_button" onclick="joinGame()">
+                <button id="join-button" class="button" onclick="joinGame()">
                   play
                 </button>
               </span>
             </div>
+      </div>
 
-          </div>
-            
-    <div class = "footer">
+      <div class = "menu-bar">
+        <a href="http://3005hacks.com"> <img id="team-logo" src="/img/3005-logo.jpg"></a>
+      </div>
+
+      </section>
+
+      <div class = "footer">
+
+      </div>
 
     </div>
-  </div>
-
+  
 </body>
-
 </html>

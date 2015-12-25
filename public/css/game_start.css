@@ -1,3 +1,12 @@
+.menu-bar{
+	min-height: 30%;
+}
+.wrapper{
+	height: 100vh;
+}
+#tag{
+	font-size: 2rem;
+}
 #game-form{
 	display: none;
 }
@@ -8,14 +17,19 @@
 	display: block;
 	margin: 2% 0 2% 0;
 }
-button { width: 18%; background: #E7BB41; border: none; padding: 10px 10px 10px 10px; text-align: center; color:white; 
-	font-size: 80%; overflow: hidden; font-size: 1.5rem; margin: 2% 2% 0 2%; cursor: pointer;}
+.button { 
+	width: 18%; 
+	border: none; 
+	padding: 10px 10px 10px 10px; 
+	text-align: center; color:white; 
+	font-size: 80%; 
+	overflow: hidden;
+	font-size: 1.5rem; 
+	margin: 2% 2% 0 2%; 
+	cursor: pointer;
 }
 
 #start-buttons{
 	padding-top: 8%;
 }
-
-.tagline-2{
-	margin-bottom: 4%;
-}
+#game-
