@@ -2,7 +2,7 @@
 var socket = io();
 
 var currentUser = Parse.User.current();
------------------------------------------
+
 /*SIGN IN ... SIGN UP*/
 
 // sign in link
@@ -38,8 +38,7 @@ $('#join-button').click( function() {
 $('#go-in-button').click( function() {
 	newUser();
 });
--------------------------------------------
--------------------------------------------
+
 /*GUESS AND SOLVE*/
 
 // Sends the guess
