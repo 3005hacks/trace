@@ -98,7 +98,7 @@ function showNewGame(){
 	$('#join-game-form').hide();
   $('#game-form').show();
   $("body").animate({scrollTop: $("#newgame-bar").position().top}, "slow");
-  $('#new-gamename').focus();
+  $('#new-question').focus();
 }
 
 // JQuery function to switch between forms
