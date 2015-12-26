@@ -5,14 +5,15 @@
     
 
 */
-    //signs up a new user
+
+//signs up a new user
     function newUser() {
 
         var user = new Parse.User();
-        var username = encodeHTML(document.getElementById("new-username").value);
-        var password = encodeHTML(document.getElementById('new-password').value);
-        var confirm_password = encodeHTML(document.getElementById("confirm-password").value);
-        var email = encodeHTML(document.getElementById('new-email').value);
+        var username = encodeHTML($('#new-username').val());
+        var password = encodeHTML($('#new-password').val());
+        var confirm_password = encodeHTML($('#confirm-password').val());
+        var email = encodeHTML($('#new-email').val());
 
         // error - catches space in username
         if(username.split(" ").length > 1){
@@ -57,7 +58,7 @@
     // Logs in a new Parse user 
     function login(){
       
-      Parse.User.logIn(encodeHTML(document.getElementById('username').value), encodeHTML(document.getElementById('password').value), {
+      Parse.User.logIn(encodeHTML($('#username').val()), encodeHTML($('#password').val()), {
       success: function(user) {
 
             // Open next window
@@ -79,7 +80,7 @@
         Parse.User.logOut();
         window.open('/', "_self");
     }
-
+/*
     // Facebook logging in
     function logMeIn(){
         
@@ -102,6 +103,7 @@
         logMeIn();
         window.open('game_start', "_self");
     }
+*/
 
 $(document).ready(function(){
     $("#password").keyup(function(e){
@@ -110,13 +112,13 @@ $(document).ready(function(){
         }
     })
 
-    $("#new_password").keyup(function(e){
+    $("#new-email").keyup(function(e){
         if (e.which === 13){
             newUser();
         }
     })
 
-    });
+});
 
 function encodeHTML(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');

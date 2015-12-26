@@ -1,4 +1,4 @@
-/*
+s/*
     These functions deal with setting up, joining, and creating games   
 */
 
@@ -11,10 +11,10 @@ var currentUser = Parse.User.current();
 function createGame() {
 
     // Retrieves user information from the form
-    var gamename_usr = encodeHTML(document.getElementById("new-gamename").value);
-    var question_usr = encodeHTML(document.getElementById("new-question").value);
-    var hint_usr = encodeHTML(document.getElementById("new-hint").value);
-    var pass_usr = encodeHTML(document.getElementById("new-pass").value);
+    var gamename_usr = encodeHTML($("#new-gamename").val());
+    var question_usr = encodeHTML($("#new-question").val());
+    var hint_usr = encodeHTML($("#new-hint").val());
+    var pass_usr = encodeHTML($("#new-pass").val());
 
     // Opening the game class from Parse
     var Game = Parse.Object.extend("Games");
@@ -31,7 +31,8 @@ function createGame() {
       success: function(game) {
 
         // If object is stored correctly
-        currentUser.add("currentTopDawg", game.id);
+        var relation = currentUser.relation("currentOwner");
+        relation.add(game);
         currentUser.save();
         window.open('landing', "_self");
         // socket.emit('goToLandingPage', gamename_usr);
@@ -45,11 +46,11 @@ function createGame() {
     });
 }
 
-// Joins a game already in
+// Joins a game already in progress
 function joinGame() {
 
     // Retrieves user passcode from form
-    var pass_given = encodeHTML(document.getElementById("game-pass").value);
+    var pass_given = encodeHTML($("#game-pass").val());
 
     // Games class from Parse
     var Game = Parse.Object.extend("Games");
@@ -60,10 +61,10 @@ function joinGame() {
 
     // Retrieve first object with given pass word
     query.first({
-      success: function(result) {
+      success: function(game) {
 
         // If there are no results, alert the user
-        if (result === undefined) {
+        if (game === undefined) {
 
           alert("Not a valid Game Code!");
         }
@@ -71,7 +72,8 @@ function joinGame() {
         // If there is a match, open the game page
         else {
 
-          currentUser.add("currentPlayer", result.id);
+          var relation = currentUser.relation("currentParticipant");
+          relation.add(game);
           currentUser.save();
           window.open('landing', "_self");
         }
@@ -93,19 +95,30 @@ function encodeHTML(s) {
 
 // JQuery function to switch between forms
 function showNewGame(){
-	$('#game-form').show();
 	$('#join-game-form').hide();
+  $('#game-form').show();
+  $("body").animate({scrollTop: $("#newgame-bar").position().top}, "slow");
+  $('#new-question').focus();
 }
 
 // JQuery function to switch between forms
 function showJoinGame(){
 	$('#game-form').hide();
 	$('#join-game-form').show();
+  $("body").animate({scrollTop: $("#joingame-bar").position().top}, "slow");
+  $('#game-pass').focus();
 }
 
-socket.on('goToLandingPage', function(data){
-  console.log(data);
-  var w = window.open('landing', "_self");
-  w.opener.$('#asker').css('background-color', 'green');
+$(document).ready(function(){
+    $("#new-pass").keyup(function(e){
+        if (e.which === 13){
+            createGame();
+        }
+    })
 
+    $("#game-pass").keyup(function(e){
+        if (e.which === 13){
+            joinGame();
+        }
+    })
 });

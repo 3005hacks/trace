@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- This is the sign-in page. -->
 <html>
 <head>
   <title>Trace!</title>
@@ -6,13 +7,16 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/css/index.css">
   <link rel="stylesheet" type="text/css" href="/css/howto.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
   <!-- FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500|Nunito|Lato:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
   <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
 
@@ -29,20 +33,47 @@
     <div class = "wrapper">
 
       <div class = "header">
-        <div class = "menu-links">
-          <a id="how-to-link">how to play</a>
-          <a id="sign-in-link">sign in</a>
-          <a id="sign-up-link">sign up</a>
-        </div>
+
       </div>
 
       <div class = "content">
 
-        <div class = "logo">trace</div>
+      <section>
+        <div class = "logo">trace!</div>
 
-        <iframe id = "vid" width="560" height="315" src="https://www.youtube.com/embed/mO77BdDwu0Q" frameborder="0" allowfullscreen></iframe>
+        <div id = "howto-bar" class = "menu-bar">
+          <div onclick="showRules()">rules</div>
+          <div id="howto">
+            <div class = "howto-slide" id = "howtoslide1">
+            <button class = "button" onclick = "slide2()">next</button>
+            <div class = "howto-text">Ponder the answers to your friends' epic questions...</div>
+            <div><img src="/img/trace1.png"></div>
+            </div>
 
-        <div id="sign-up-form" class="start-form">
+            <div class = "howto-slide" id = "howtoslide2">
+            <button class = "button" onclick = "slide3()">next</button> 
+            <div class = "howto-text">Drop clues to help each other out...</div>
+            <div><img src="/img/trace4.png"></div>     
+            </div>
+
+            <div class = "howto-slide" id = "howtoslide3">
+            <button class = "button" onclick = "slide4()">next</button>
+            <div class = "howto-text">Trace your way to the truth...</div>
+            <div><img src="/img/trace2.png"></div>
+            </div>
+
+            <div class = "howto-slide" id = "howtoslide4">
+            <button class = "button" onclick="playNow()">play now</button>
+            <div class = "howto-text">Until it's your turn to take control! </div>
+            <div><img src="/img/trace3.png"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id = "signup-bar" class = "menu-bar">
+          <div onclick="showSignup()">sign up</div> 
+          <div id="sign-up-form" class="game-form">
 
           <label for="username">Username</label>
           <input type="text" name="username" id="new-username" class="input">
@@ -56,66 +87,41 @@
           <label for="email">Email</label>
           <input type="text" name="email" id="new-email" class="input">
 
-          <div id="go-in-button" class="pointer button">Join</div>
+          <div id="go-in-button" class="pointer button">Sign Up!</div>
+
+          </div>
+
+        </div>
+        <div id = "signin-bar" class = "menu-bar">
+          <div onclick="showSignin()">sign in</div> 
+          <div id="sign-in-form" class="game-form">
+            
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="input">
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="input" minlength="6" maxlength="12">
+            
+            <div id="join-button" class="pointer button">Go In!</div>
+          </div>   
+                   
         </div>
 
-        <div id="sign-in-form" class="start-form">
-          
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" class="input">
-          
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" class="input" minlength="6" maxlength="12">
-          
-          <div id="join-button" class="pointer button">Go In!</div>
-        </div>  
-       
-      </div>         
 
-      <div class = "footer">
-        <div class="copyright">3005Hacks &copy; 2015</div>
-      </div>
-    </div>    
-  </section>
+        <div class = "menu-bar">
+                  <iframe id = "vid" height="315" src="https://www.youtube.com/embed/mO77BdDwu0Q" frameborder="0" allowfullscreen></iframe>
+        </div>   
 
-  <section class="howto">
-    <div class = "wrapper">
+        <div class = "menu-bar">
+             <a href="http://3005hacks.com"> <img id="team-logo" src="/img/3005-logo.jpg"></a>
+        </div>       
 
-      <div class = "content">
-
-        <a class = "logo-howto" href="/">trace</a>
-
-        <div class = "tagline">trace your way to the truth!</div>
-        <div class = "tagline-2">here's how to play:</div>
-
-        <div class = "howto-slide" id = "howtoslide1">
-        <button class = "next" onclick = "slide2()">next</button>
-        <div class = "howto-text">Ponder the answers to your friends' epic questions...</div>
-        <div><img src="/img/trace1.png"></div>
-        </div>
-
-        <div class = "howto-slide" id = "howtoslide2">
-        <button class = "next" onclick = "slide3()">next</button> 
-        <div class = "howto-text">Drop clues to help each other out...</div>
-        <div><img src="/img/trace4.png"></div>     
-        </div>
-
-        <div class = "howto-slide" id = "howtoslide3">
-        <button class = "next" onclick = "slide4()">next</button>
-        <div class = "howto-text">Trace your way to the truth...</div>
-        <div><img src="/img/trace2.png"></div>
-        </div>
-
-        <div class = "howto-slide" id = "howtoslide4">
-        <button class = "next" onclick = "window.open('game_start', '_self')">play now</button> 
-        <div class = "howto-text">Until it's your turn to take control! </div>
-        <div><img src="/img/trace3.png"></div>
-        </div>
+      </section>
 
       </div>         
 
-<!--       <div class="howto-text" style="color: #393E41">Hint: type gif... before a guess to add some flavor to your game!</div> -->
-    </div>
+
+  </div>    
   </section>
 
   <!-- JS -->

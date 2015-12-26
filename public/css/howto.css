@@ -1,61 +1,26 @@
-.howto
-{
-	background-color: white;
-	color: #ACBED8;
-}
-
-.logo-howto
-{
-	color: #E7BB41;
-
-	margin-bottom: 2%;
-	font-family: 'Fredoka One';
-	font-size: 13rem;
-}
-
-.tagline
-{
-	font-size: 3rem;
-}
-
-.tagline-2
-{
-	color: #393E41;
-}
-
-.howto-text
-{
-	font-size: 2rem;
-	width: 50%;
-	margin: 3% 25% 3% 25%;
+.howto-text{
+	font-size: 2.5rem;
+	width: 100%;
+	margin: 3% 0 3% 0;
 	text-align: center;
-	
 }
-
-#howtoslide2
-{
+#howtoslide2{
 	display: none;
 }
-
-#howtoslide3
-{
+#howtoslide3{
 	display: none;
 }
-
-#howtoslide4
-{
+#howtoslide4{
 	display: none;
 }
-
-.howto-slide
-{
-	height: 20%;
-	margin-top: 3%;
+.howto-slide{
 }
-
-.howto-slide img
-{
+.howto-slide img{
 	height: 20rem;
 	width: auto;
 	border: 0.3rem solid #393E41;
+}
+#howto{
+	display: none;
+	margin: 4% 0 0 0;
 }

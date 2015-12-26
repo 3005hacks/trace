@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- this is the game page -->
 <html>
 <head>
   <title>Trace</title>
@@ -23,14 +24,8 @@
 
   <div class = "wrapper">
 
-    <div id="winner-pop-up">
-      <button id="play-again">Play Again!</button>
-    </div>
-
     <div class = "header">
       <center><div class = "menu-links">
-      <a href="howto">how to play</a>
-      <a href="">logout</a>
       <a href="game_start">new game</a>
       </div></center>
     </div>
@@ -50,6 +45,12 @@
         </div>
       </div>
 
+      <!-- <iframe id="spotify" src="https://embed.spotify.com/?uri=spotify:track:4th1RQAelzqgY7wL53UGQt" width="300" height="380" frameborder="0" allowtransparency="true"></iframe> -->
+
+      <div id="winner-pop-up">
+        <div id="play-again">Play Again!</div>
+      </div>
+
     </div>
 
   </div>
@@ -57,6 +58,7 @@
   <div class="footer">
     <div id = "guess-form">
         <ul id="messages"></ul>
+        <img id="back-button" onclick="changeGuessOption()"src="/img/back.png">
         <button id="showGuess" onclick="showGuessInput()">drop a clue!</button>
         <button id="showSolve" onclick="showSolveInput()">solve the puzzle!</button>
         <input id="input-guess" placeholder="type gif... for gif magic!" autocomplete="off"/>
@@ -65,13 +67,12 @@
         <button id="solve-button" >solve!</button>
     </div>
   </div>
-  
+
   <!-- JS -->
   <script type="text/javascript" src="/js/landing.js"></script>
-  <script type="text/javascript" src="/js/global.js"></script>
   <script type="text/javascript" src="/js/client.js"></script>
   <script type="text/javascript" src="/js/game.js"></script>
   <script type="text/javascript" src="/js/clues.js"></script>
-
+  <script type="text/javascript" src="/js/user.js"></script>
 </body>
 </html>

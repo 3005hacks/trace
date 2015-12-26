@@ -39,13 +39,12 @@ a{
 	text-align: center;
 }
 .menu-links{
-	width: 80%;
-	display: flex;
-	justify-content: space-between;
+	width: 100%;
+	text-align: center;
 }
 .menu-links a{
 	font-size: 2rem;
-	color: #E7BB41;
+	color: #DD4646;
 }
 
 /*LOGO*/
@@ -54,7 +53,11 @@ a{
 	margin-bottom: 4%;
 	font-family: 'Fredoka One';
 	font-size: 10rem;
+	cursor: pointer;
 }
+	.logo:hover{
+		color: #DD4646;
+	}
 
 /*GAME STYLING*/
 .card{
@@ -130,52 +133,57 @@ input {
 	height: 4.0rem;
 	margin: 0 30% 0 30%;
 }
-#input-guess{
-	display:none;
-	height: 2.0rem;
-}
-#input-solve{
-	display:none;
-	height: 2.0rem;
-}
-#guess-button{
-	display: none;
-	background: #393E41;
-	width:10%;
-}
-#solve-button{
-	display: none;
-	background: #393E41;
-	width:10%;
-}
-#showSolve{
-	background-color: #DD4646;
-}
 #guess-form{
 
 }
+	#input-guess{
+		display:none;
+		height: 2.0rem;
+	}
+	#input-solve{
+		display:none;
+		height: 2.0rem;
+	}
+	#guess-button{
+		display: none;
+		background: #393E41;
+		width:10%;
+	}
+	#solve-button{
+		display: none;
+		background: #393E41;
+		width:10%;
+	}
+	#showSolve{
+		background-color: #DD4646;
+	}
+	#back-button{
+		display: none;
+		margin-top: 1rem;
+		height: 3rem;
+		padding-right: 3rem;
+	}
 #winner-pop-up {
 	display: none;
 	text-align: center;
-	width: 60%;
-	margin: 0 20% 0 20%;
-	padding: 20% 0 20% 0;
-	height: 50%;
-	background-color: #E7BB41;
+	width: 15%;
+	height: 10%;
+	background-color: #DD4646 ;
 	opacity: 0.95;
 	position: fixed;
-	border-radius: 20rem 20rem 20rem 20rem;
+	left: 42.5%;
+	top: 50%
 }
 #play-again{
-	font-size: 10rem;
+	font-size: 2rem;
 	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+	margin: 10% 0 auto 0;
 	height: auto;
 	width: auto;
 	font-family: 'Fredoka One';
 	cursor: pointer;
 }
-#play-again:hover{
-	color:#ACBED8 ;
+#winner-pop-up:hover{
+	border: white solid;
 	
 }
