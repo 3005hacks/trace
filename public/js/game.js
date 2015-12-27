@@ -1,4 +1,4 @@
-s/*
+/*
     These functions deal with setting up, joining, and creating games   
 */
 
