@@ -15,7 +15,7 @@ function showSignin(){
 	$("body").animate({scrollTop: $("#signin-bar").position().top}, "slow");
 	$('#sign-in-form').slideDown();
 	$('#sign-up-form').hide();
-	$('#username').focus();
+	//$('#username').focus();
 }
 
 // sign up link
@@ -28,7 +28,7 @@ function showSignup() {
 	$("body").animate({scrollTop: $("#signup-bar").position().top}, "slow");
 	$('#sign-up-form').slideDown();
 	$('#sign-in-form').hide();
-	$('#new-username').focus();
+	//$('#new-username').focus();
 }
 
 $('#join-button').click( function() {
