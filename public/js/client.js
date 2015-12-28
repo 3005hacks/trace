@@ -12,9 +12,9 @@ $('#sign-in-link').click( function() {
 
 // show sign in
 function showSignin(){
-	$("body").animate({scrollTop: $("#signin-bar").position().top}, "slow");
 	$('#sign-in-form').slideDown();
 	$('#sign-up-form').hide();
+	$("body").animate({scrollTop: $("#signin-bar").position().top}, "slow");
 	//$('#username').focus();
 }
 
@@ -25,9 +25,9 @@ $('#sign-up-link').click( function() {
 
 // show sign up
 function showSignup() {
-	$("body").animate({scrollTop: $("#signup-bar").position().top}, "slow");
 	$('#sign-up-form').slideDown();
 	$('#sign-in-form').hide();
+	$("body").animate({scrollTop: $("#signup-bar").position().top}, "slow");
 	//$('#new-username').focus();
 }
 
