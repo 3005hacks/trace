@@ -49,7 +49,8 @@ var guessSubmit = function() {
 
 		guessed: usr_guess,
 		username: currentUser.getUsername(),
-		isGif: false
+		isGif: false,
+		isSong: false
 	};
 
 	var Guess = Parse.Object.extend("Guesses");
@@ -92,7 +93,7 @@ var guessSubmit = function() {
 
 	}
 	else if (isSong(usr_guess)) {
-		console.log(getSongWord(usr_guess));
+
 		makeSongWidget(getSongWord(usr_guess), function(song) {
 
 			guess.save({
@@ -241,17 +242,15 @@ function changeGuessOption(){
 
 // listener for Guess signal
 socket.on('goonGuess', function(goonGuess){
-	console.log(goonGuess.isSong);
+
 	var cardContent = goonGuess.guessed;
 	if (goonGuess.isGif) {
 
-		console.log(true);
-		console.log(data); //WTF IS "data"???!??!?!??! - ganesh
+		console.log(goonGuess.guessed); //WTF IS "data"???!??!?!??! - ganesh
 		cardContent = '<img style= "height: 18rem" class="gif" src="' + goonGuess.guessed + '">';
 	}
 	else if (goonGuess.isSong) {
 
-		console.log(true);
 		console.log(goonGuess.guessed);
 		cardContent = '<iframe class="song" src="' + goonGuess.guessed + '" width="300" height="180" frameborder="0" allowtransparency="true"></iframe>';
 	}
