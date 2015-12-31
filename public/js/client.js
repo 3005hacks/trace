@@ -55,7 +55,7 @@ var guessSubmit = function() {
 	var Guess = Parse.Object.extend("Guesses");
 	var guess = new Guess();
 
-	if (isGif($('#input-guess').val())) {
+	if (isGif(usr_guess)) {
 
 		makeGif(getGifWord(usr_guess), function(url) {
 
@@ -84,6 +84,42 @@ var guessSubmit = function() {
 
 		      	}, error: function(gameScore, error) {
 		      
+		        // error handling goes here
+		      	}
+		    });
+
+		});
+
+	}
+	else if (isSong(usr_guess)) {
+		console.log(getSongWord(usr_guess));
+		makeSongWidget(getSongWord(usr_guess), function(song) {
+
+			guess.save({
+
+		      	text: song,
+		      	username: currentUser.getUsername(),
+		      	isSong: true,
+		      	game: gameObject,
+		      	isGuess: true
+		    	}, {
+		      	success: function(game) {
+
+		        	// If object is stored correctly
+		        	console.log('Guess saved');
+		        	goonGuess.guessed = song;
+		        	goonGuess.isSong = true;
+		        	goonGuess.id = game.id;
+		        	console.log(goonGuess);
+					socket.emit('goonGuess', goonGuess);
+					$('#input-guess').val('');
+					var relation = gameObject.relation("guesses");
+					relation.add(game);
+					gameObject.save();
+					return false;
+
+		      	}, error: function(gameScore, error) {
+		      		console.log(55);
 		        // error handling goes here
 		      	}
 		    });
@@ -205,13 +241,19 @@ function changeGuessOption(){
 
 // listener for Guess signal
 socket.on('goonGuess', function(goonGuess){
-
+	console.log(goonGuess.isSong);
 	var cardContent = goonGuess.guessed;
 	if (goonGuess.isGif) {
 
 		console.log(true);
-		console.log(data);
+		console.log(data); //WTF IS "data"???!??!?!??! - ganesh
 		cardContent = '<img style= "height: 18rem" class="gif" src="' + goonGuess.guessed + '">';
+	}
+	else if (goonGuess.isSong) {
+
+		console.log(true);
+		console.log(goonGuess.guessed);
+		cardContent = '<iframe class="song" src="' + goonGuess.guessed + '" width="300" height="180" frameborder="0" allowtransparency="true"></iframe>';
 	}
 
 	$('#feed').append($(
@@ -243,7 +285,6 @@ socket.on('goonGuess', function(goonGuess){
 
 // listener for Solve signal
 socket.on('goonSolve', function(goonSolve){
-
 	$('#feed').append($(
 		'\
 		<div class = "card">\
