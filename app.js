@@ -8,6 +8,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
+var SpotifyWebApi = require('spotify-web-api-node');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -53,6 +54,18 @@ io.on('connection', function(socket){
 
 	socket.on('solutionFound', function(thumbsUpId){
 		io.emit('solutionFound', thumbsUpId);
+	});
+
+	socket.on('spotify', function(obj){
+		
+		var spotifyApi = new SpotifyWebApi();
+
+		spotifyApi.searchTracks(obj.songName)
+			.then(function(data) {
+				io.emit('spotify2', data.body.tracks.items[0].uri);
+			}, function(err) {
+				console.log(err);
+			});
 	});
 
 });

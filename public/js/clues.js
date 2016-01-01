@@ -32,20 +32,11 @@ function makeGif(word, callback){
 // determines if a user input string is for a gif
 function isGif(str){ 
 	str = str.toString().toLowerCase();
-	var gif = "gif...";
-	var gifShort = "gif..";
-	var gifLong = "gif....";
+	var gif = "gif/";
 
 	if(str.indexOf(gif.toLowerCase()) == 0){
 		return true;
 	}
-	if(str.indexOf(gifShort.toLowerCase()) == 0){
-		return true;
-	}
-	if(str.indexOf(gifLong.toLowerCase()) == 0){
-		return true;
-	}
-
 	else{
 		return false;
 	}
@@ -64,20 +55,11 @@ function getGifWord(str){
 // determines if a user input string is for a song
 function isSong(str){ 
 	str = str.toString().toLowerCase();
-	var song = "song...";
-	var songShort = "song..";
-	var songLong = "song....";
+	var song = "song/";
 
 	if(str.indexOf(song.toLowerCase()) == 0){
 		return true;
 	}
-	if(str.indexOf(songShort.toLowerCase()) == 0){
-		return true;
-	}
-	if(str.indexOf(songLong.toLowerCase()) == 0){
-		return true;
-	}
-
 	else{
 		return false;
 	}
@@ -88,12 +70,17 @@ function getSongWord(str){
 	var strArray;
 	strArray = str.split("");
 
-	strArray.splice(0,7);
+	strArray.splice(0,5);
 
 	return strArray.join("");
 }
 
-function makeSongWidget(str){
-	var song = "https://embed.spotify.com/?uri=" + str;
-	$("#spotify").attr("src", song); 
+function makeSongWidget(str, callback){
+
+	socket.emit('spotify', {'songName':str});
+
+	socket.on('spotify2', function(songURI) {
+		var song = "https://embed.spotify.com/?uri=" + songURI;
+		callback(song);
+	});
 }
